@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -13,10 +13,102 @@
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+/* Aquí definimos las Custom properties */
+:root {
+/* Colors */
+  --c-primary: #FFB5E8;
+  --c-secondary: #00B4D8;
+  --c-tertiary: #C8AB7C;
+  --c-accent: #FFB6C1;
+  --c-text: #2B272A;
+  --c-background: #FAFAFA;
+  --c-background-section: #FFFDFD;
+  --c-background-card: #F2F1EB;
+/* Size */
+  --s-title: clamp(2.5rem, 3.57vi + 1.79rem, 5rem);
+	--s-subtitle: clamp(1.6rem, 1.73vi + 1.25rem, 2.81rem);
+	--s-special: clamp(1.02rem, 0.8vi + 0.86rem, 1.58rem);
+	--s-text: clamp(0.82rem, 0.53vi + 0.71rem, 1.19rem);
+	--s-card: 15px;
+	--s-details: clamp(0.66rem, 0.34vi + 0.59rem, 0.89rem);
+/* Margin */
+	--m-block: 150px;
+	--m-xwith: 768px;
+
+/* Border */
+  --b-radius: 15px;	
+
+/* Padding */
+	--p-block: 150px;
+}
+
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+	background-color: var(--c-background);
+  font-size: 100%;
+  line-height: 0.8;
+ 
+}
 </style>
