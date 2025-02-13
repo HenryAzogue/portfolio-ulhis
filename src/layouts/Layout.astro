@@ -13,6 +13,36 @@
 </html>
 
 <style>
+
+@font-face{
+	font-family: 'BricolageGrotesque';
+	src: url('/public/font/BricolageGrotesque-Bold.ttf') format(TrueType);
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face{
+	font-family: 'BricolageGrotesque';
+	src: url('/public/font/BricolageGrotesque-SemiBold.ttf') format(TrueType);
+	font-weight: 600;
+	font-style: normal;
+	font-display: swsap;
+}
+@font-face{
+	font-family: 'BricolageGrotesque';
+	src: url('/public/font/BricolageGrotesque-Regular.ttf') format(TrueType);
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face{
+	font-family: 'BricolageGrotesque';
+	src: url('/public/font/BricolageGrotesque-Light.ttf') format(TrueType);
+	font-weight: lighter;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* Aquí definimos las Custom properties */
 :root {
 /* Colors */
@@ -40,6 +70,9 @@
 
 /* Padding */
 	--p-block: 150px;
+
+/* Font*/
+  --f-context: BricolageGrotesque;
 }
 
 /* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
@@ -107,6 +140,7 @@ svg {
 
 body {
 	background-color: var(--c-background);
+  font-family:  var(--f-context);
   font-size: 100%;
   line-height: 0.8;
  
