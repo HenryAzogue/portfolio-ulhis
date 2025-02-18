@@ -1,0 +1,72 @@
+---
+import Logo from "@icons/Logo.astro";
+
+
+---
+
+<header class="header">
+  <div class="header-span">
+    <div class="span-especial">Disponible: 
+      <div class="span-icon"></div>
+    </div>
+    <div class="span-text">
+      <span>Disponible: para proyectos</span>
+      <span>& colaboraciones</span>
+    </div>
+  </div>
+  <div class="header-logo">
+    <Logo />
+  </div>
+  <span class="header-name">HENRY ULISES<br>AZOGUE CH.</span>
+</header>
+
+<style>
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 2rem;
+  color: var(--c-text);
+  font-size: var(--s-details);
+}
+.span-text{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 5px;
+
+}
+.span-especial{
+  display: none;
+}
+.header-logo{
+  width: 77px;
+}
+.header-name{
+  font-size: var(--s-details);
+}
+
+@media (width<=768px){
+  .header{
+    padding: 1px 5px;
+  }
+  .header-logo{
+    width: 67px;
+  }
+}
+@media (width<=425px){
+  .span-text{display: none;}
+  .span-especial{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    & .span-icon{
+      background-color: greenyellow;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+</style>
