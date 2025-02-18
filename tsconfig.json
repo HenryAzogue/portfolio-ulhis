@@ -11,6 +11,9 @@
       "@layouts/*":[
         "src/layouts/*"
       ],
+      "@icons/*":[
+        "src/icons/*"
+      ],
       "@lib/*":[
         "src/lib/*"
       ]
