@@ -13,7 +13,9 @@ import Footer from "@components/Footer.astro"
 	</head>
 	<body>
     <Header />
+    <main>
       <slot />
+    </main>
     <Footer />
 	</body>
 </html>
@@ -150,5 +152,11 @@ body {
   font-size: 100%;
   line-height: 0.8;
  
+}
+main{
+  margin: 0 2rem;
+}
+@media (width<=768px){
+  main{margin: 0 5px;}
 }
 </style>
