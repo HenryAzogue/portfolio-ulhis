@@ -1,0 +1,50 @@
+---
+import Star from "@icons/Star.astro";
+
+
+---
+
+<footer class="footer">
+  <div class="footer-text">
+    <p>Creditos: <br>Inspirado en 
+      <a class="footer-link"
+        href="https://www.ozgekeles.com/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >OZGE KELES</a>
+    </p>
+    <div class="footer-icon">
+      <Star />
+    </div>
+  </div>
+  <span class="footer-name">HENRY ULISES<br>AZOGUE CH.</span>
+</footer>
+
+<style>
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--s-details);
+  color: var(--c-text); 
+  padding: 5px 2rem;
+}
+.footer-text{
+  display: flex;
+  justify-content: center;
+}
+.footer-link{
+  text-decoration: none;
+  color: var(--c-text);
+}
+.footer-icon{
+  width: 29px;
+}
+@media (width<=768px){
+  .footer{
+    padding: 1px 5px;
+  }
+}
+
+
+</style>
