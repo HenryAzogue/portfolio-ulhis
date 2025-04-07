@@ -16,7 +16,7 @@ import Footer from "@components/Footer.astro"
     <main>
       <slot />
     </main>
-    <Footer />
+    <!-- <Footer /> -->
 	</body>
 </html>
 
@@ -54,14 +54,14 @@ import Footer from "@components/Footer.astro"
 /* Aquí definimos las Custom properties */
 :root {
 /* Colors */
-  --c-primary: #FFB5E8;
-  --c-secondary: #00B4D8;
-  --c-tertiary: #C8AB7C;
-  --c-accent: #FFB6C1;
-  --c-text: #2B272A;
-  --c-background: #FAFAFA;
-  --c-background-section: #FFFDFD;
-  --c-background-card: #F2F1EB;
+  --c-disabled: #00B4D8;
+  --c-classic-rose: #FDD2EF;
+  --c-alabaster: #FAFAFA;
+  --c-cararra: #F2F1EF;
+  --c-cod-gray: #0A0A0A;
+  --c-shark: #2B272A;
+  --c-tuatara: #363636;
+
 /* Size */
   --s-title: clamp(2.625rem, 1.2614rem + 6.8182vw, 5.625rem);
 	--s-subtitle: clamp(2.375rem, 1.6932rem + 3.4091vw, 3.875rem);
@@ -69,6 +69,12 @@ import Footer from "@components/Footer.astro"
 	--s-text: clamp(0.75rem, 0.7214rem + 0.1432vw, 0.813rem);
 	--s-card-title: clamp(1.25rem, 1.0795rem + 0.8523vw, 1.625rem);
 	--s-card-paragraph: clamp(0.875rem, 0.8182rem + 0.2841vw, 1rem);
+  
+  /* Box */
+  --w-box: clamp(17.875rem, -0.4205rem + 91.4773vw, 58.125rem);
+  /**Agregar el clamp() para los bordes de las target's*/
+  --box-state: clamp(0.688rem, 0.5744rem + 0.5682vw, 0.938rem);
+  
 /* Margin */
 	--m-block: 150px;
 	--m-xwith: 768px;
@@ -78,6 +84,7 @@ import Footer from "@components/Footer.astro"
 
 /* Padding */
 	--p-block: 150px;
+  /**Agregar el clamp() de la separacion del gap en las target's */
 
 /* Font*/
   --f-context: BricolageGrotesque;
@@ -147,16 +154,15 @@ svg {
 }
 
 body {
-	background-color: var(--c-background);
+	background-color: var(--c-classic-rose);
   font-family:  var(--f-context);
   font-size: 100%;
   line-height: 0.8;
- 
 }
 main{
-  margin: 0 2rem;
+  margin: 0 auto;
+  width: var(--w-box);
 }
 @media (width<=768px){
-  main{margin: 0 5px;}
 }
 </style>
