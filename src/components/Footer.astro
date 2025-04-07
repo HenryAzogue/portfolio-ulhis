@@ -1,50 +1,56 @@
 ---
 import Star from "@icons/Star.astro";
 
-
 ---
 
 <footer class="footer">
-  <div class="footer-text">
-    <p>Creditos: <br>Inspirado en 
-      <a class="footer-link"
-        href="https://www.ozgekeles.com/" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >OZGE KELES</a>
-    </p>
-    <div class="footer-icon">
-      <Star />
+  <div class="content">
+    <div class="text">
+      <p>Creditos:
+        <br>Inspirado en 
+          <a class="text-link"
+          href="https://www.ozgekeles.com/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          > OZGE KELES
+          </a>
+        </p>
+        <div class="icon">
+          <Star />
+        </div>
     </div>
+    <span class="name">HENRY ULISES<br>AZOGUE CH.</span>
   </div>
-  <span class="footer-name">HENRY ULISES<br>AZOGUE CH.</span>
 </footer>
 
 <style>
 .footer{
+  background: var(--c-tuatara);
+  color: var(--c-alabaster);
+  padding: 32px 0;
+}
+.content{  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--s-details);
-  color: var(--c-text); 
-  padding: 5px 2rem;
+
+  font-size: var(--s-text);
+
+  margin: 0 auto;
+  max-width: var(--w-box);
 }
-.footer-text{
+.text{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.footer-link{
+.text-link{
+  color: var(--c-alabaster);
+  font-weight: bold;
   text-decoration: none;
-  color: var(--c-text);
 }
-.footer-icon{
-  width: 29px;
+.icon{
+  width: 16px;
+  height: 16px;
 }
-@media (width<=768px){
-  .footer{
-    padding: 1px 5px;
-  }
-}
-
-
 </style>
