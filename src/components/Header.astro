@@ -1,23 +1,21 @@
 ---
-import Logo from "@icons/Logo.astro";
-
+import Star from "@icons/Star.astro";
 
 ---
 
 <header class="header">
-  <div class="header-span">
-    <div class="span-especial">Disponible: 
-      <div class="span-icon"></div>
-    </div>
-    <div class="span-text">
-      <span>Disponible: para proyectos</span>
-      <span>& colaboraciones</span>
-    </div>
+  <div class="header-state">
+    <div class="content-text">Disponible:</div>
+    <div class="content-icon"></div>
   </div>
   <div class="header-logo">
-    <Logo />
+    <span class="logo-n1">u</span>
+    <span class="logo-n2">lhis</span>
+    <div class="logo-content"><Star /></div>
   </div>
-  <span class="header-name">HENRY ULISES<br>AZOGUE CH.</span>
+  <nav class="header-content">
+    <a class="content-link" href="#contact">Contáctame</a>
+  </nav>
 </header>
 
 <style>
@@ -25,48 +23,57 @@ import Logo from "@icons/Logo.astro";
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 2rem;
-  color: var(--c-text);
-  font-size: var(--s-details);
+  padding-top: 5px;
+  width: var(--w-box);
+  margin: 0 auto;
 }
-.span-text{
+
+.header-content{}
+.header-state{
   display: flex;
-  flex-direction: column;
-  align-items: end;
+  flex-direction: row;
+  align-items: center;
   gap: 5px;
+}
+.content-text{
+  font-size: var(--s-text);
+  color: var(--c-tuatara);
+}
+.content-icon{
+  background-color: var(--c-disabled);
+  border-radius: 50%;
+  width: var(--box-state);
+  height: var(--box-state);
+}
+.content-link{
+  text-decoration: none;
+  font-size: var(--s-text);
+  color: var(--c-tuatara);
+}
+.content-link:hover{
+  color: var(--c-disabled);
+  transition: color 1s ease-in-out;
+}
 
-}
-.span-especial{
-  display: none;
-}
 .header-logo{
-  width: 77px;
+  color: var(--c-god-gray);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.header-name{
-  font-size: var(--s-details);
+.logo-n1{
+  font-size: 35px;
+  line-height: 17px;
+  letter-spacing: -2px;
+  padding-bottom: 6px;
 }
-
-@media (width<=768px){
-  .header{
-    padding: 1px 5px;
-  }
-  .header-logo{
-    width: 67px;
-  }
+.logo-n2{
+  font-size: 26px;
+  line-height: 20px;
+  letter-spacing: -1px;
 }
-@media (width<=425px){
-  .span-text{display: none;}
-  .span-especial{
-    display: flex;
-    align-items: center;
-    gap: 2px;
-
-    & .span-icon{
-      background-color: greenyellow;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-    }
-  }
+.logo-content{
+  width: 24px;
+  height: 24px;
 }
 </style>
