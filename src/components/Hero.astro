@@ -1,0 +1,154 @@
+---
+import Star from "@icons/Star.astro";
+import Piece from "./Piece.astro";
+
+---
+
+<section class="hero">
+  <div class="title">
+    <h1 class="title-content">
+      <span class="box-n1">
+        <span>Henry</span>
+        <span>Ulises</span>
+      </span>
+      <span class="box-n2">
+        <span>
+          <span>Az<span class="box-m">o</span>gue</span>
+        </span>
+        <span>
+          <span>Ch<span class="box-s">.</span></span>
+        </span>
+      </span>
+    </h1>
+    <img 
+      class="title-image"
+      src="/image/s-hero.webp"
+      alt="Imagen de Ulises el desarrollador web"
+    >
+  </div>
+  <div class="subtitle">
+    <div class="subtitle-content">
+      <Piece />
+      <div class="content-box">
+        <h2>Web</h2>
+        <div class="content-star">
+         <Star />
+        </div>
+      </div>
+    </div>
+    <p class="content-box">Devel<span class="box-m">o</span>per</p>
+  </div>
+</section>
+
+<style>
+.hero{
+  padding: var(--p-section) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.title-image{
+  border: solid 1px var(--c-disabled);
+  border-radius: 10px;
+  object-fit: cover;
+  width: clamp(6.813rem, 1.7280rem + 25.4250vw, 18rem);
+  height: clamp(12.5rem, 8.9773rem + 17.6136vw, 20.25rem);
+}
+.title-content{
+  display: flex;
+  flex-direction: column;
+  font-size: var(--s-title);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+.subtitle{}
+.subtitle-content{
+  display: flex;
+  align-items: cneter;
+  justify-content: start;
+  gap: 6px;
+  line-height: 1;
+}
+.content-box{
+  font-size: var(--s-title);
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: end;
+  margin:0;
+  text-align: center;
+  
+  & h2{
+    padding-top: 10px;
+    margin: 0;
+    font-size: var(--s-title);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+.content-star{
+  margin-top: 10px;
+  width: var(--w-star);
+  height: var(--w-star);
+  color: var(--c-disabled);
+}
+.box-n1{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+}
+.box-n2{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+}
+
+.box-m{position: relative;}
+.box-m::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: clamp(1.875rem, 0.9373rem + 4.6886vw, 3.938rem);
+  height: clamp(1.875rem, 0.7955rem + 5.3977vw, 4.25rem);
+  top: clamp(0.688rem, 0.4325rem + 1.2773vw, 1.25rem);
+  right: 0;
+  background-color: var(--c-disabled);
+}
+.box-s{position: relative;}
+.box-s::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: clamp(0.688rem, 0.4325rem + 1.2773vw, 1.25rem);
+  height: clamp(0.688rem, 0.4325rem + 1.2773vw, 1.25rem);
+  top: clamp(1.938rem, 0.8871rem + 5.2545vw, 4.25rem);
+  right: 0;
+  background-color: var(--c-disabled);
+}
+
+@media(width <= 743px){
+  .subtitle-content{
+    justify-content: flex-start;
+  }
+}
+@media(width >= 743px){
+  .box-n1{
+    flex-direction: row;
+  }
+  .subtitle-content{
+    padding-left: 4rem;
+  }
+}
+</style>

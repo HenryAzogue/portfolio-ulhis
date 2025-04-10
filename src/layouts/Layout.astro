@@ -72,6 +72,7 @@ import Footer from "@components/Footer.astro"
   
   /* Box */
   --w-box: clamp(17.875rem, -0.4205rem + 91.4773vw, 58.125rem);
+  --w-star: clamp(2.188rem, 1.1939rem + 4.9705vw, 4.375rem);
   /**Agregar el clamp() para los bordes de las target's*/
   --box-state: clamp(0.688rem, 0.5744rem + 0.5682vw, 0.938rem);
   
@@ -83,7 +84,7 @@ import Footer from "@components/Footer.astro"
   --b-radius: 15px;	
 
 /* Padding */
-	--p-block: 150px;
+	--p-section: clamp(2rem, 1.0909rem + 4.5455vw, 4rem);
   /**Agregar el clamp() de la separacion del gap en las target's */
 
 /* Font*/
@@ -157,12 +158,9 @@ body {
 	background-color: var(--c-classic-rose);
   font-family:  var(--f-context);
   font-size: 100%;
-  line-height: 0.95;
 }
 main{
   margin: 0 auto;
   width: var(--w-box);
-}
-@media (width<=768px){
 }
 </style>
