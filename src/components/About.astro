@@ -1,0 +1,53 @@
+---
+import SubTitle from "./SubTitle.astro";
+
+---
+
+<section class="about">
+  <div class="about-box">
+    <SubTitle title="Sobre mí" />
+    <div class="about-content">
+      <p class="content-text"> <strong>¡Hola! Soy Henry, Web Developer apasionado por la Fotografía y el Diseño UI.</strong> Estas disciplinas no solo son mis habilidades, sino también las herramientas con las que busco transformar ideas en experiencias digitales significativas. Mi camino se centra en descubrir el propósito detrás de cada proyecto, entendiendo que cada proceso tiene su ritmo, y que la vida misma está llena de caminos que nos llevan a contar historias únicas.</p>
+      <p class="content-text">En mi día a día, trabajo con tecnologías como <strong>HTML, CSS, JavaScript, TypeScript, Astro</strong> y <strong>React</strong>, que me permiten convertir conceptos en realidades digitales. Cuando inicio un nuevo proyecto, me apoyo de <strong>Figma</strong> y <strong>Lunacy</strong>, que son ideales para crear diseños que representan fielmente una marca, producto o servicio.</p>
+      <p class="content-text">Creo firmemente que todo gran proyecto comienza con una identidad visual sólida. Por eso, dedico especial atención al registro fotográfico. Me inclino hacia la fotografía de producto, moda, retrato y un poco de video, junto con retoques de calidad utilizando herramientas como <strong>Affinity Photo</strong> y <strong>Snapseed</strong>, elementos fundamentales para construir una narrativa visual que se pueda implementar con éxito en cualquier plataforma.</p>
+      <p class="content-text">Mi motivación es crear. Y por ellos agradezco profundamente a las mentes creativas que han desarrollado las herramientas y tecnologías que utilizo, ya que me permiten llevar mi pasión por el diseño y la fotografía al siguiente nivel al mundo real.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about{
+    background-color: var(--c-tuatara);
+    border-radius: var(--b-radius);
+  }
+  .about-box{
+    padding-block: var(--p-section);
+    margin: 0 auto;
+    max-width: var(--w-box);
+  }
+  .about-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: end;
+      gap: 1rem;
+      padding-top: 1rem;
+  }
+  .content-text{
+    text-wrap: balance;
+    color: var(--c-alabaster);  
+    margin: 0;
+  }
+  @media(width >= 743px){
+    .about-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: end;
+      gap: 1rem;
+    }
+    .content-text{
+      width: clamp(25.313rem, 21.0218rem + 18.3091vw, 37.5rem);
+    }
+  }
+</style>

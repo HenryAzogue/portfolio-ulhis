@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props
+
+---
+
+<h2 class="sub-title">
+  { title }
+</h2>
+
+<style>
+  .sub-title{
+    font-size: var(--s-subtitle);
+    font-weight: 400;
+    color: var(--c-disabled);
+    text-wrap: pretty;
+    margin: 0;
+  }
+</style>
