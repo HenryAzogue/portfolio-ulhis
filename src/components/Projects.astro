@@ -1,0 +1,189 @@
+---
+import LinkCard from './LinkCard.astro';
+import SubTitle from './SubTitle.astro';
+import {projects} from '@lib/cv.json';
+
+---
+<section class="projects">
+  <SubTitle title="Conectando ideas" />
+  <ul class="project-content">
+    {
+      projects.map(({title, subtitle, tags, imagen, imgDescription, highlights, urlProjects})=>{
+        return(
+          <li>
+            <article class="article">
+              <header class="article-header">
+                <hgroup class="header">
+                  <h2 class="header-title">{title}</h2>
+                  <p class="header-text">{subtitle}</p>
+                </hgroup>
+                <div class="context">
+                  <p class="context-paragraph">{highlights[0]}</p>
+                  <div class="context-tags">{tags.map((tag)=>{return(<span class="tag">{tag}</span>)})}</div>
+                </div>
+              </header>
+              <footer class="article-footer">
+                <img class="footer-image" src={imagen} alt={imgDescription} decoding="async" loading="lazy" />
+                <div class="url-rrss">
+                  <LinkCard href={urlProjects[0]} target="_blank">
+                      <svg  
+                        slot="after"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 8l-4 4l4 4" />
+                        <path d="M17 8l4 4l-4 4" />
+                        <path d="M14 4l-4 16" />
+                      </svg>
+                      Código                  
+                  </LinkCard>
+                  <LinkCard href={urlProjects[1]} target="_blank">
+                    <svg  
+                      slot="after"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      >
+                        <path 
+                          stroke="none" 
+                          d="M0 0h24v24H0z" 
+                          fill="none"
+                        />
+                        <path d="M4 8h16" />
+                        <path 
+                          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" 
+                        /><path d="M8 4v4" />
+                    </svg>
+                      Sitio Web               
+                  </LinkCard>
+                  <LinkCard href={urlProjects[2]} target="_blank">
+                    <svg  
+                      slot="after"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
+                        <path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        <path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        <path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                    </svg>
+                    Diseño
+                  </LinkCard>
+                </div>
+              </footer>
+            </article>
+          </li>
+
+        )
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  li{list-style: none;}
+  .projects{
+    padding-block: var(--p-section);
+    margin: 0 auto;
+    max-width: var(--w-box);
+  }
+  .project-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+
+    width: 100%;
+  }
+  .article{
+    background-image: repeating-linear-gradient(0deg, #00b4d838, #00b4d838 1.5px, transparent 1.5px, transparent);
+    background-size: 18px 18px;
+    background-color: #fafafa;
+
+    backdrop-filter: blur(2px);  
+    border-radius: 15px;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    padding: var(--p-target-block) var(--p-target-inline);
+  }
+  .article-header{
+    color: var(--c-shark);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .header-title{
+    font-size: var(--s-card-title);
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  .header-text{
+    font-size: var(--s-paragraph);
+    margin: 0;
+  }
+  .context-paragraph{
+    color: var(--c-tuatara);
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  .context-tags{
+    display: flex;
+    gap: 5px;
+    margin: 0;
+  }
+  .tag{
+    color: var(--c-tuatara);
+    font-size: var(--s-card-paragraph);
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .article-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .footer-image{
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.158);
+    aspect-ratio: 16/9;
+    border-radius: var(--b-radius);
+    width: 100%;
+  }
+  .url-rrss{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+  }
+  svg{
+    width: 16px;
+    height: 16px;
+  }
+  @media(width >= 743px){
+    .article{
+      flex-direction: row;
+    }
+  }
+</style>

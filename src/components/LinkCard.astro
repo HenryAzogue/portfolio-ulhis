@@ -1,0 +1,41 @@
+---
+const {href} = Astro.props
+
+---
+<a
+  class="link-card"
+  href={href} 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <slot name="after"/>
+  <slot />
+  <slot name="before"/>
+</a>
+
+<style>
+.link-card{
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--c-tuatara);
+  border-radius: 15px;
+  border: 1px solid var(--c-tuatara);
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  
+  width: 115px;
+  padding-block: 4px;
+
+  transition: background-color 0.25s ease-out,
+              border 0.25s ease;
+}
+.link-card:hover{
+  background-color: var(--c-disabled);
+  color: var(--c-alabaster);
+  border: 1px solid var(--c-disabled);
+}
+</style>
