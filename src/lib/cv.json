@@ -70,7 +70,7 @@
   "projects": [{
     "title": "SofyLine",
     "subtitle":"Ecommerce de una emprendedora",
-    "imagen": "../../src/assets/img-project-001.webp",
+    "imagen": "/image/img-project-001.webp",
     "imgDescription":"Imagen del diseño para Sofyline",
     "position": "Colaborador",
     "state": "en proceso",
@@ -89,7 +89,7 @@
     },{
     "title": "CrediPasa",
     "subtitle":"Concepto Web",
-    "imagen": "../../src/assets/img-project-002.webp",
+    "imagen": "/image/img-project-002.webp",
     "imgDescription":"Imagen del concepto web para CediPasa caja de ahorros",
     "position": "Freelance",
     "state": "concluida",
@@ -106,7 +106,7 @@
     },{
     "title": "Luca Shops",
     "subtitle":"Diseño de una tienda de productos",
-    "imagen": "../../src/assets/img-project-003.webp",
+    "imagen": "/image/img-project-003.webp",
     "imgDescription":"Construccion de un concepto de pagina para Luca Shops",
     "position": "Freelance",
     "state": "concluida",
