@@ -4,70 +4,21 @@ import SubTitle from './SubTitle.astro';
 import {projects} from '@lib/cv.json';
 
 ---
-<section class="projects">
-  <SubTitle title="Conectando ideas" />
-  <ul class="project-content">
+<section class="projects" id="projects">
+  <SubTitle letterFrist="P" letterSecond='royectos'/>
+  <div class="project-content">
     {
-      projects.map(({title, subtitle, tags, imagen, imgDescription, highlights, urlProjects})=>{
+      projects.map(({title, tags, imagen, imgDescription, highlights, urlProjects})=>{
         return(
           <li>
             <article class="article">
               <header class="article-header">
-                <hgroup class="header">
-                  <h2 class="header-title">{title}</h2>
-                  <p class="header-text">{subtitle}</p>
-                </hgroup>
+                <h2 class="header-title">{title}</h2>
                 <div class="context">
                   <p class="context-paragraph">{highlights[0]}</p>
                   <div class="context-tags">{tags.map((tag)=>{return(<span class="tag">{tag}</span>)})}</div>
                 </div>
-              </header>
-              <footer class="article-footer">
-                <img class="footer-image" src={imagen} alt={imgDescription} decoding="async" loading="lazy" />
                 <div class="url-rrss">
-                  <LinkCard href={urlProjects[0]} target="_blank">
-                      <svg  
-                        slot="after"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M7 8l-4 4l4 4" />
-                        <path d="M17 8l4 4l-4 4" />
-                        <path d="M14 4l-4 16" />
-                      </svg>
-                      Código                  
-                  </LinkCard>
-                  <LinkCard href={urlProjects[1]} target="_blank">
-                    <svg  
-                      slot="after"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      >
-                        <path 
-                          stroke="none" 
-                          d="M0 0h24v24H0z" 
-                          fill="none"
-                        />
-                        <path d="M4 8h16" />
-                        <path 
-                          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" 
-                        /><path d="M8 4v4" />
-                    </svg>
-                      Sitio Web               
-                  </LinkCard>
                   <LinkCard href={urlProjects[2]} target="_blank">
                     <svg  
                       slot="after"
@@ -89,6 +40,9 @@ import {projects} from '@lib/cv.json';
                     Diseño
                   </LinkCard>
                 </div>
+              </header>
+              <footer class="article-footer">
+                <img class="footer-image" src={imagen} alt={imgDescription} decoding="async" loading="lazy" />
               </footer>
             </article>
           </li>
@@ -96,83 +50,72 @@ import {projects} from '@lib/cv.json';
         )
       })
     }
-  </ul>
+  </div>
 </section>
 
 <style>
-  li{list-style: none;}
+  li{
+    list-style: none;
+    border-radius: 1px;
+    padding: 2rem 0;
+    border-bottom: solid 1px var(--c-burning-sand-light);
+  }
   .projects{
-    padding-block: var(--p-section);
-    margin: 0 auto;
-    max-width: var(--w-box);
+    margin: 4rem auto;
+    width: var(--z-box);
   }
   .project-content{
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 0;
-
     width: 100%;
   }
   .article{
-    background-image: repeating-linear-gradient(0deg, #00b4d838, #00b4d838 1.5px, transparent 1.5px, transparent);
-    background-size: 18px 18px;
-    background-color: #fafafa;
-
-    backdrop-filter: blur(2px);  
-    border-radius: 15px;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    
-    padding: var(--p-target-block) var(--p-target-inline);
+    gap: 2rem;    
+
+    .article-header{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      
+      .header-title{
+        color: var(--c-big-stone);
+        font-size: var(--s-subtitle);
+        margin: 0;
+      }
+    }
   }
-  .article-header{
-    color: var(--c-shark);
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .header-title{
-    font-size: var(--s-card-title);
-    margin: 0;
-    padding-bottom: 5px;
-  }
-  .header-text{
+  .context{
     font-size: var(--s-paragraph);
-    margin: 0;
-  }
-  .context-paragraph{
-    color: var(--c-tuatara);
-    margin: 0;
-    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .context-paragraph{
+      color: var(--c-big-stone-high);
+      margin: 0;
+      padding-bottom: 5px;
+    }
   }
   .context-tags{
     display: flex;
-    gap: 5px;
+    flex-flow: row wrap;
+    gap: 10px;
     margin: 0;
-  }
-  .tag{
-    color: var(--c-tuatara);
-    font-size: var(--s-card-paragraph);
-    font-weight: 300;
-    letter-spacing: 1px;
-  }
-  .article-footer{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .footer-image{
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.158);
-    aspect-ratio: 16/9;
-    border-radius: var(--b-radius);
     width: 100%;
+
+    .tag{
+      color: var(--c-burning-sand);
+      font-style: italic;
+      font-weight: 400;
+    }
   }
   .url-rrss{
+    border-radius: var(--b-radius);
+    border: solid 1px var(--c-burning-sand-light);
+    padding: 1rem;
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
@@ -181,9 +124,20 @@ import {projects} from '@lib/cv.json';
     width: 16px;
     height: 16px;
   }
+  .article-footer{
+    .footer-image{
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: var(--b-radius);
+      border: solid 1px var(--c-burning-sand-light);
+      width: 100%;
+      height: 100%;
+    }
+  }
   @media(width >= 743px){
     .article{
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

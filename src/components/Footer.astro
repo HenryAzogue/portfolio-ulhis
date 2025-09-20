@@ -1,56 +1,78 @@
 ---
-import Star from "@icons/Star.astro";
 
 ---
 
 <footer class="footer">
-  <div class="content">
+    <div class="name">
+      <a href="#" class="header-logo">
+        <span class="logo-n1">u</span>
+        <span class="logo-n2">lhis</span>
+      </a>
+    </div>
     <div class="text">
-      <p>Creditos:
-        <br>Inspirado en 
-          <a class="text-link"
+      <span>Inspirado en
+         <br>
+        <a class="text-link"
           href="https://www.ozgekeles.com/" 
           target="_blank" 
           rel="noopener noreferrer"
-          > OZGE KELES
-          </a>
-        </p>
-        <div class="icon">
-          <Star />
-        </div>
+        > OZGE KELES
+        </a>
+      </span>
     </div>
-    <span class="name">HENRY ULISES<br>AZOGUE CH.</span>
-  </div>
 </footer>
 
 <style>
 .footer{
-  background: var(--c-tuatara);
-  color: var(--c-alabaster);
-  padding: 32px 0;
-}
-.content{  
+  box-sizing: border-box;
+  border-radius: var(--b-radius) var(--b-radius) 0 0;
+  background-color: var(--c-big-stone);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  font-size: var(--s-text);
-
+  color: var(--c-alabaster);
+  padding: 2rem 1rem;
+  max-width: 62rem;
   margin: 0 auto;
-  max-width: var(--w-box);
+}
+.name{
+  font-size: 16px;
+  a{
+    color: var(--c-concrete);
+    list-style-type: circle;
+    text-decoration: none;
+  }
+}
+.header-logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+
+}
+.logo-n1{
+  font-size: 18px;
+  font-family: var(--font-special);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.logo-n2{
+  font-size: 19px;
 }
 .text{
+  color: var(--c-concrete);
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  a{    
+    text-decoration: none;
+    color: var(--c-concrete);
+    font-weight: 400;
+  }
 }
-.text-link{
-  color: var(--c-alabaster);
-  font-weight: bold;
-  text-decoration: none;
-}
-.icon{
-  width: 16px;
-  height: 16px;
+.text-link:hover{
+  color: var(--c-burning-sand-light);
+  transition: color 0.25s ease-in-out;
 }
 </style>

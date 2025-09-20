@@ -1,22 +1,32 @@
 ---
 interface Props {
-  title: string;
+  letterFrist: string;
+  letterSecond: string;
 }
 
-const { title } = Astro.props
+const { letterFrist, letterSecond } = Astro.props
 
 ---
 
-<h2 class="sub-title">
-  { title }
+<h2 class="subtitle">
+  <span>{letterFrist}</span>
+  {letterSecond}
 </h2>
 
 <style>
-  .sub-title{
-    font-size: var(--s-subtitle);
-    font-weight: 400;
-    color: var(--c-disabled);
-    text-wrap: balance;
-    margin: 0;
+  .subtitle{
+
+    color: var(--c-burning-sand);
+    font-family: var(--font-special);
+    font-size: var(--s-title-section);
+    
+    display: flex;
+    gap: 1px;
+
+    span{
+      font-family: var(--font-context);
+      font-weight: 400;
+      font-style: italic;
+    }
   }
 </style>

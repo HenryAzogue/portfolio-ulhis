@@ -3,10 +3,29 @@ import About from '@components/About.astro';
 import Hero from '@components/Hero.astro';
 import Layout from '@layouts/Layout.astro';
 import Projects from '@components/Projects.astro'
+import Tools from '@components/Tools.astro';
+import Slider from '@components/Slider.astro'
+import Contact from '@components/Contact.astro';
+
 ---
 
 <Layout>
 	<Hero />
+	<Slider />
+	<Projects /> 
 	<About />
-	<Projects />
+	<div class="tools-wrap">
+		<Tools />
+	</div>
+	<Contact />
 </Layout>
+
+<style>
+	.tools-wrap{
+		box-sizing: border-box;
+		border: solid 1px var(--c-bison-hide);
+    border-radius: var(--b-radius);
+    background: #fff;
+		width: 100%;
+	}
+</style>

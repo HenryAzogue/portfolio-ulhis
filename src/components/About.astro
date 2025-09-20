@@ -1,55 +1,144 @@
 ---
+import Star from "@icons/Star.astro";
 import SubTitle from "./SubTitle.astro";
 
 ---
 
-<section class="about">
+<section id="#about" class="about">
+  <SubTitle letterFrist="A" letterSecond="cerca de mí" />
   <div class="about-box">
-    <SubTitle title="Sobre mí" />
-    <div class="about-content">
-      <p class="content-text"> <strong>¡Hola! Soy Henry, Web Developer apasionado por la Fotografía y el Diseño UI.</strong> Estas disciplinas no solo son mis habilidades, también son las herramientas con las que busco transformar ideas en experiencias digitales significativas. Mi camino se centra en descubrir el propósito detrás de cada proyecto, entendiendo que cada proceso tiene su ritmo, y que la vida misma está llena de caminos que nos llevan a contar historias únicas.</p>
-      <p class="content-text">En mi día a día, trabajo con tecnologías como <strong>HTML, CSS, JavaScript, TypeScript, Astro</strong> y <strong>React</strong>, que me permiten convertir conceptos en realidades digitales. Cuando inicio un nuevo proyecto, me apoyo de <strong>Figma</strong> y <strong>Lunacy</strong>, que son ideales para crear diseños que representan fielmente una marca, producto o servicio.</p>
-      <p class="content-text">Creo firmemente que todo gran proyecto comienza con una identidad visual sólida. Por eso, dedico especial atención al registro fotográfico. Me inclino hacia la fotografía de producto, moda, retrato y un poco de video, junto con retoques de calidad utilizando herramientas como <strong>Affinity Photo</strong> y <strong>Snapseed</strong>, elementos fundamentales para construir una narrativa visual que se pueda implementar con éxito en cualquier plataforma.</p>
-      <p class="content-text">Mi motivación es crear. Y por ellos agradezco profundamente a las mentes creativas que han desarrollado las herramientas y tecnologías que utilizo, ya que me permiten llevar mi pasión por el diseño y la fotografía al siguiente nivel al mundo real.</p>
+    <div class="box-card">
+      <div class="card">
+        <img class="card-img" src="/image/img-about-me.webp" alt="Foto de Henry Azogue desarrollador web">
+      </div>
+      <p class="mail">hnrazogue@<span class="mail-special">gmail.com</span></p>
+    </div>
+
+    <div class="box-content">
+      <span class="content-text">Soy</span>
+      <h2p class="content-text-special">Henry Azogue</h2p>
+      <div class="content-group">
+        <p class="content-text">Desarrollador web con aptitudes en fotografía y diseño UI.</p>
+        <p class="content-text">Estas son las habilidades que elegí para con ello plasmar las ideas en productos digitales porque cada trazo, cada foto, cada texto y  cada proceso es una historia que sera contada desde mi punto de vista.</p>
+      </div>
+      <span class="content-text">Mis estudios:</span>
+      <div class="education">
+        <li class="details">
+          <div class="details-svg">
+            <Star />
+          </div>
+          Academlo
+        </li>
+        <li class="details">
+          <div class="details-svg">
+            <Star />
+          </div>
+            Instituto Superior Bolivar
+        </li>
+        <li class="details">
+          <div class="details-svg">
+            <Star />
+          </div>
+          Unidad Educativa Atahualpa
+        </li>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .about{
-    background-color: var(--c-tuatara);
-    border-radius: var(--b-radius);
+    margin: 0 auto;
+    width: var(--z-box);
   }
   .about-box{
-    padding-block: var(--p-section);
-    margin: 0 auto;
-    max-width: var(--w-box);
+    padding-block: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
-  .about-content{
+  .box-card{
+    .card{
+      border-radius: var(--b-radius);
+      width:clamp(18rem, 14.2500rem + 18.7500vw, 26.25rem);
+      background: conic-gradient(from 270deg at 50% 50%, #d99177 0%, #012840 100%);
+     
+      .card-img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .mail{
+      color: var(--c-big-stone);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+
+      font-style: italic;
+      font-size: 16px;
+
+      .mail-special{
+        font-family: var(--font-special);
+        font-size: 27px;
+        line-height: 45px;
+      }
+    }
+  }
+  .box-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+      width: clamp(18rem, 14.1364rem + 19.3182vw, 26.5rem);
+
+    
+    .content-group{
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: end;
-      gap: 1rem;
-      padding-top: 1rem;
+      gap: 10px;
+      
+      .content-text{
+        text-wrap: balance;
+        color: var(--c-big-stone-high);  
+        margin: 0;
+      }
+    }
+  }
+  .content-text-special{
+    color: var(--c-burning-sand);
+    font-size: clamp(2.5rem, 1.9318rem + 2.8409vw, 3.75rem);
+    font-family: var(--font-special);
+    font-weight: 700;
   }
   .content-text{
-    text-wrap: balance;
-    color: var(--c-alabaster);  
-    margin: 0;
-    line-height: 1.5;
+    color: var(--c-big-stone-high);
+  }
+  .education{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    .details{
+      color: var(--c-big-stone-high);
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      .details-svg{
+        width: 25px;
+        height: 25px;
+        color: var(--c-burning-sand-light);
+        
+      }
+    }
   }
   @media(width >= 743px){
-    .about-content{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: end;
-      gap: 1rem;
-    }
-    .content-text{
-      width: clamp(25.313rem, 21.0218rem + 18.3091vw, 37.5rem);
-  
+    .about-box{
+      flex-direction: row;
+      align-items: center;
     }
   }
 </style>

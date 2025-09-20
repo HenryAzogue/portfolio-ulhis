@@ -71,42 +71,56 @@
     "title": "SofyLine",
     "subtitle":"Ecommerce de una emprendedora",
     "imagen": "../../src/assets/img-project-001.webp",
-    "imgDescription":"Construccion de la pagina de Sofyline",
+    "imgDescription":"Imagen del diseño para Sofyline",
     "position": "Colaborador",
     "state": "en proceso",
     "startDate": "10-Mayo-2024",
-    "endDate": "10-Mayo-2025",
-    "tags": ["#Astro", "#React", "#Html", "#Css", "#Js"],
+    "endDate": "en progreso",
+    "tags": ["#fotografía", "#moda","#lunacy", "#diseño", "#ux/ui"],
     "highlights": [
-      "Pasar la experiencia de llevar a cabo una secion de fotos para mi fue todo un sueño hecho realidad, ya que para llegar al resultado camine y conoci lugares y personas diferentes. ",
-      "Fue un buen momento para realizar un trabajo real con la experiencia en cursos de diseño. Y ahora el Concepto Web esta hecho y puede seguir mejorando. Esto me ayudo confiar mas en mi mismo.",
-      "El desarrollo me llevo tiempo pero se logro llegar al final, esta construido con Astro"
-    ],
-    "urlProjects": [
-      "https://github.com/Ulhis/pokedex_app",
-      "https://linktr.ee/herbertsgirls",
-      "https://www.behance.net/gallery/221767433/Sofyline"
-      ]
-    },{
-    "title": "Luca Shops",
-    "subtitle":"Diseño de una tienda de productos",
-    "imagen": "../../src/assets/img-project-002.webp",
-    "imgDescription":"Construccion de un concepto de pagina para Luca Shops",
-    "position": "Colaborador",
-    "state": "concluida",
-    "startDate": "10-Mayo-2024",
-    "endDate": "10-Mayo-2025",
-    "tags": ["#Lunacy"],
-    "highlights": [
-      "Pasar la experiencia de llevar a cabo una secion de fotos para mi fue todo un sueño hecho realidad, ya que para llegar al resultado camine y conoci lugares y personas diferentes. ",
+      "Todo el diseño y el material visual han sido creados desde cero. Utilicé el programa Lunacy para desarrollar la interfaz de usuario (UI), y las fotografías fueron posibles gracias a una chica increíble que colaboró como modelo, posando con las blusas confeccionadas por esta talentosa emprendedora.",
       "Fue un buen momento para realizar un trabajo real con la experiencia en cursos de diseño. Y ahora el Concepto Web esta hecho y puede seguir mejorando. Esto me ayudo confiar mas en mi mismo.",
       "El desarrollo me llevo tiempo pero se logro llegar al final, esta construido con Astro"
     ],
     "urlProjects": [
       "https://github.com/Ulhis",
-      "https://linktr.ee/herbertsgirls",
       "https://www.behance.net/gallery/221767433/Sofyline"
       ]
-  }
-]
+    },{
+    "title": "CrediPasa",
+    "subtitle":"Concepto Web",
+    "imagen": "../../src/assets/img-project-002.webp",
+    "imgDescription":"Imagen del concepto web para CediPasa caja de ahorros",
+    "position": "Freelance",
+    "state": "concluida",
+    "startDate": "--",
+    "endDate": "--",
+    "tags": ["#lunacy", "#diseño", "#ux/ui"],
+    "highlights": [
+      "Todos los créditos a la Caja de Ahorros CrediPasa por el material (imágenes y texto) que es de propiedad de ellos. Mi concepto Web se construyo en base a la información que ellos tienen publicado en su cuenta de Facebook."
+       ],
+    "urlProjects": [
+      "https://github.com/Ulhis",
+      "https://www.behance.net/gallery/234966241/Concepto-Web-CrediPasa"
+      ]
+    },{
+    "title": "Luca Shops",
+    "subtitle":"Diseño de una tienda de productos",
+    "imagen": "../../src/assets/img-project-003.webp",
+    "imgDescription":"Construccion de un concepto de pagina para Luca Shops",
+    "position": "Freelance",
+    "state": "concluida",
+    "startDate": "--",
+    "endDate": "--",
+    "tags": ["#Lunacy", "#diseño", "#ux/ui"],
+    "highlights": [
+      "Concepto Web para una tienda Online de productos variados."
+    ],
+    "urlProjects": [
+      "https://github.com/Ulhis",
+      "https://www.behance.net/gallery/221766055/Luca-shops"
+      ]
+    }
+  ]
 }
+

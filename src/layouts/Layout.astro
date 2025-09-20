@@ -12,85 +12,54 @@ import Footer from "@components/Footer.astro"
 		<title>Ulhis</title>
 	</head>
 	<body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer /> 
 	</body>
 </html>
 
 <style>
 
 @font-face{
-	font-family: 'BricolageGrotesque';
-	src: url('/font/BricolageGrotesque-Bold.ttf') format(TrueType);
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face{
-	font-family: 'BricolageGrotesque';
-	src: url('/font/BricolageGrotesque-SemiBold.ttf') format(TrueType);
-	font-weight: 600;
-	font-style: normal;
-	font-display: swsap;
-}
-@font-face{
-	font-family: 'BricolageGrotesque';
-	src: url('/font/BricolageGrotesque-Regular.ttf') format(TrueType);
+	font-family: 'MonsieurLaDoulaise';
+	src: url('/font/MonsieurLaDoulaise-Regular.woff2') format(woff2);
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
-@font-face{
-	font-family: 'BricolageGrotesque';
-	src: url('/font/BricolageGrotesque-Light.ttf') format(TrueType);
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
+
 
 /* Aquí definimos las Custom properties */
 :root {
 /* Colors */
-  --c-disabled: #00B4D8;
-  --c-classic-rose: #FDD2EF;
-  --c-alabaster: #FAFAFA;
-  --c-cararra: #F2F1EF;
-  --c-cod-gray: #0A0A0A;
-  --c-shark: #2B272A;
-  --c-tuatara: #363636;
+  --c-big-stone: hsl(203, 97%, 13%);
+  --c-big-stone-high:hsla(203, 97%, 13%, 0.90);
+  --c-big-stone-moderate:hsla(203, 97%, 13%, 0.70);
+  --c-bison-hide: hsl(40, 17%, 70%);
+  --c-burning-sand: hsl(16, 56%, 66%);
+  --c-burning-sand-light:hsla(16, 56%, 66%, 0.70);
+  --c-concrete: hsl(0, 0%, 95%);
 
-/* Size */
-  --s-title: clamp(2.625rem, 1.2614rem + 6.8182vw, 5.625rem);
-	--s-subtitle: clamp(2.375rem, 1.6932rem + 3.4091vw, 3.875rem);
-	--s-paragraph: clamp(1rem, 0.9432rem + 0.2841vw, 1.125rem);
-	--s-text: clamp(0.75rem, 0.7214rem + 0.1432vw, 0.813rem);
-	--s-card-title: clamp(1.25rem, 1.0795rem + 0.8523vw, 1.625rem);
-	--s-card-paragraph: clamp(0.875rem, 0.8182rem + 0.2841vw, 1rem);
-  
-  /* Box */
-  --w-box: clamp(17.875rem, -0.4205rem + 91.4773vw, 58.125rem);
-  --w-star: clamp(2.188rem, 1.1939rem + 4.9705vw, 4.375rem);
-  /**Agregar el clamp() para los bordes de las target's*/
-  --box-state: clamp(0.688rem, 0.5744rem + 0.5682vw, 0.938rem);
-  
-/* Margin */
-	--m-block: 150px;
-	--m-xwith: 768px;
+/* Size text*/
+  --s-title: clamp(1.875rem, 0.0693rem + 7.7042vw, 5rem);
+	--s-subtitle: clamp(1.5rem, 1.1591rem + 1.7045vw, 2.25rem);	
+	--s-paragraph: clamp(1.125rem, 1.0528rem + 0.3082vw, 1.15rem);
+  --s-title-section: clamp(1.375rem, 1.3028rem + 0.3082vw, 1.5rem);
+  --s-special: clamp(2.5rem, 1.7777rem + 3.0817vw, 3.75rem);
+
+/* Size box*/
+  --z-hf: clamp(18rem, -2.0000rem + 100.0000vw, 62rem);
+  --z-box: clamp(18rem, -1.6364rem + 93.1818vw, 58rem);
+  --z-img-big: clamp(17rem, 16.2045rem + 3.9773vw, 18.75rem);
 
 /* Border */
-  --b-radius: 15px;	
+  --b-radius: 15px;
 
-/* Padding */
-	--p-section: clamp(2rem, 1.0909rem + 4.5455vw, 4rem);
-  /**Agregar el clamp() de la separacion del gap en las target's */
-  --p-target-block:clamp(1rem, 0.0909rem + 4.5455vw, 3rem);
-  --p-target-inline: clamp(0.375rem, 0.0909rem + 1.4205vw, 1rem);
-
-/* Font*/
-  --f-context: BricolageGrotesque;
+/* Fonts  */
+  --font-context: Helvetica, sans-serif;
+  --font-special: MonsieurLaDoulaise;
 }
 
 /* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
@@ -131,6 +100,7 @@ p a {
 
 li {
   list-style-type: none;
+  list-style: none;
 }
 
 html {
@@ -143,6 +113,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   font-style: inherit;
   text-decoration: none;
   color: inherit;
+  margin: 0;
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
@@ -157,8 +128,9 @@ svg {
 }
 
 body {
-	background-color: var(--c-classic-rose);
-  font-family:  var(--f-context);
+	background-image: url("/back-img.webp");
+	font-family:  var(--font-context);
   font-size: 100%;
 }
+
 </style>

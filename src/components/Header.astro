@@ -1,79 +1,92 @@
 ---
-import Star from "@icons/Star.astro";
 
 ---
 
-<header class="header">
-  <div class="header-state">
-    <div class="content-text">Disponible:</div>
-    <div class="content-icon"></div>
-  </div>
-  <div class="header-logo">
+<header id="#contact" class="header">
+  <a href="#" class="header-logo">
     <span class="logo-n1">u</span>
     <span class="logo-n2">lhis</span>
-    <div class="logo-content"><Star /></div>
-  </div>
-  <nav class="header-content">
-    <a class="content-link" href="#contact">Contáctame</a>
+  </a>
+  <nav class="header-nav">
+    <li class="nav-li">
+      <a href="#projects" class="link-navigate">
+        Proyectos</li>
+      </a>
+    <li class="nav-li">
+      <a href="#about" class="link-navigate">
+        Acerca de mí</li>
+      </a>
   </nav>
+  <div class="header-content">
+    <a class="link-navigate" href="#contact">Contáctame</a>
+  </div>
 </header>
 
 <style>
 .header{
+  color: var(--c-big-stone);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5px;
-  width: var(--w-box);
+  padding-top: 7px;
+  width: var(--z-hf);
   margin: 0 auto;
+  
+  a{
+    list-style-type: circle;
+  text-decoration: none;
+  color: var(--c-big-stone);
+  }
 }
 
-.header-content{}
-.header-state{
+.header-logo{
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 5px;
-}
-.content-text{
-  font-size: var(--s-text);
-  color: var(--c-tuatara);
-}
-.content-icon{
-  background-color: var(--c-disabled);
-  border-radius: 50%;
-  width: var(--box-state);
-  height: var(--box-state);
-}
-.content-link{
-  text-decoration: none;
-  font-size: var(--s-text);
-  color: var(--c-tuatara);
-}
-.content-link:hover{
-  color: var(--c-disabled);
-  transition: color 1s ease-in-out;
-}
 
-.header-logo{
-  color: var(--c-god-gray);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 .logo-n1{
-  font-size: 35px;
-  line-height: 17px;
-  letter-spacing: -2px;
-  padding-bottom: 6px;
+  font-size: 18px;
+  font-family: var(--font-special);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .logo-n2{
-  font-size: 26px;
-  line-height: 20px;
-  letter-spacing: -1px;
+  font-size: 19px;
 }
-.logo-content{
-  width: 24px;
-  height: 24px;
+
+.header-nav{
+  display: none;
+  /* display: flex; */
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
 }
+.nav-li {
+  list-style-type: none;
+}
+
+.link-navigate{ 
+  list-style-type: circle;
+  text-decoration: none;
+  color: var(--c-big-stone);
+}
+.link-navigate:hover{
+  color: var(--c-burning-sand-light);
+  transition: color 0.25s ease-in-out;
+}
+
+.header-content{
+  color: var(--c-big-stone); 
+}
+@media (width >=736px){
+  .header{
+    
+  }
+  .header-nav{
+    display: flex;
+  }
+}
+
 </style>

@@ -1,0 +1,54 @@
+---
+import SubTitle from "./SubTitle.astro";
+import Rrss from "./Rrss.astro";
+
+---
+<section id="#contact" class="contact">
+  <SubTitle letterFrist="C" letterSecond="ontáctame"/>
+  <div class="contact-box">
+    <h2 class="contact-title">Escribeme para futuros <span class="contact-span">proyectos</span></h2>
+  </div>
+  <p class="contact-legend">Call trans opt: received. 12-15-96 14:32:21 REC:Log></p>
+  <div class="slider">
+    <Rrss />
+  </div>
+</section>
+
+<style>
+.contact{
+  width: var(--z-box);
+  margin: 4rem auto;
+  color: var(--c-big-stone);
+}
+.contact-box{
+  margin: 4rem 0 0 0 ;
+
+  .contact-title{
+    font-size: clamp(1.5rem, 0.8182rem + 3.4091vw, 3rem);
+    font-style: italic;
+    margin: 0;
+  }
+  .contact-span{
+    font-size: clamp(2.5rem, 1.9318rem + 2.8409vw, 3.75rem);
+    font-family: var(--font-special);
+    font-style: normal;
+    position: relative;
+  }
+  .contact-span::after{
+    content: url(/public/star.svg);
+    position: absolute;
+    right: -30px;
+    bottom: clamp(1.875rem, 1.0227rem + 4.2614vw, 3.75rem);
+    width: 25px;
+    height: 25px;
+  }
+ 
+}
+.contact-legend{
+  font-size: 15px;
+}
+.slider{
+  margin-bottom: 4rem;
+}
+
+</style>

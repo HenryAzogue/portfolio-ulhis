@@ -1,0 +1,57 @@
+---
+import Linkedin from '@icons/Linkedin.astro';
+import GitHub from '@icons/GitHub.astro';
+import Behance from '@icons/Behance.astro';
+import Dribblen from '@icons/Dribblen.astro';
+import Pinterest from '@icons/Pinterest.astro'
+import Gmail from '@icons/Gmail.astro';
+---
+<div class="slider">
+  <a class="link" href="https://www.linkedin.com/in/henryazogue" referrerpolicy="no-referrer" target="_blank">
+    <Linkedin />
+  </a>
+  <a class="link" href="https://github.com/HenryAzogue" referrerpolicy="no-referrer" target="_blank">
+    <GitHub />
+  </a>
+  <a class="link" href="https://www.behance.net/henryazogue" referrerpolicy="no-referrer" target="_blank">
+    <Behance />
+  </a>
+  <a class="link" href="https://dribbble.com/henryAzogue" referrerpolicy="no-referrer" target="_blank">
+    <Dribblen />
+  </a>
+  <a class="link" href="https://es.pinterest.com/henryazogue/" referrerpolicy="no-referrer" target="_blank">
+    <Pinterest />
+  </a>
+  <a class="link" href="mailto:hnrazogue@gmail.com" referrerpolicy="no-referrer" target="_blank">
+    <Gmail />
+  </a>
+</div>
+
+<style>
+.slider{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 32px;
+  width: var(--z-hf);
+  margin: 0 auto;
+  opacity: 75%;
+  
+  .div-svg{
+  }
+  
+  .link{
+    width: 32px;
+    height: 32px;
+    color: var(--c-big-stone);
+    transition: color 0.45s ease-in-out,
+                scale 0.45s ease-in-out;
+  }
+
+  .link:hover{
+    color: var(--c-burning-sand);
+    scale: 1.15;
+  }
+}
+
+</style>
