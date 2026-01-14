@@ -40,7 +40,16 @@ import Star from "@icons/Star.astro";
                         <Cv />
                     </a>
                 </div>
-                <p class="span">@ulhis</p>
+                <p class="span">
+                    <a
+                        class="span-link"
+                        href="https://www.behance.net/henryazogue"
+                        referrerpolicy="no-referrer"
+                        target="_blank"
+                    >
+                        @ulhis
+                    </a>
+                </p>
             </div>
         </div>
     </div>
@@ -137,6 +146,25 @@ import Star from "@icons/Star.astro";
                 }
             }
         }
+    }
+    .span-link {
+        text-decoration: none;
+        font-size: 16px;
+        color: var(--c-big-stone-moderate);
+        border-radius: 15px;
+        border: 1px solid var(--c-big-stone-moderate);
+
+        /*width: 115px;*/
+        padding: 5px 16px;
+        transition:
+            background-color 0.45s ease-in-out,
+            color 0.45s ease-in-out,
+            scale 0.45s ease-in-out;
+    }
+    .span-link:hover {
+        background-color: var(--c-burning-sand);
+        color: var(--c-concrete);
+        scale: 1.15;
     }
 
     @media (width <=425px) {
