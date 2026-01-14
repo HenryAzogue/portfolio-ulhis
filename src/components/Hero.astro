@@ -1,137 +1,147 @@
 ---
 import Cv from "@icons/Cv.astro";
 import Star from "@icons/Star.astro";
-
 ---
 
 <section class="hero">
-  <div class="header">
-    <h1 class="header-title">
-      <span class="title-span"> 
-        Henry Azogue
-        <div class="star">
-          <Star />
-        </div>
-      </span>
-      Web Developer
-    </h1>
-  </div>
+    <div class="header">
+        <h1 class="header-title">
+            <span class="title-span">
+                Henry Azogue
+                <div class="star">
+                    <Star />
+                </div>
+            </span>
+            Web Developer
+        </h1>
+    </div>
 
-  <div class="content">
-    <div class="content-image">
-      <img 
-      class="image-profile"
-      src="/image/profile.webp"
-      alt="Foto de perfil del chico desarrollador web"
-      >
-    </div>
-      <div class="content-box"></div>
-      <div class="content-description">
-        <h2 class="content-subtitle">Desarrollador web con aptitudes en Fotografía y Diseño UI.</h2>
-        <div class="content-span">
-          <div>
-            <a class="content-link" href="https://drive.google.com/file/d/18mAOk8Cep-8lDFYj1S_gh7rH_smFLFnf/view" referrerpolicy="no-referrer" target="_blank">
-              <Cv />      
-            </a>
-          </div>
-          <p class="span">@ulhis</p>
+    <div class="content">
+        <div class="content-image">
+            <img
+                class="image-profile"
+                src="/image/profile.webp"
+                alt="Foto de perfil del chico desarrollador web"
+            />
+        </div>
+        <div class="content-box"></div>
+        <div class="content-description">
+            <h2 class="content-subtitle">
+                Desarrollador web con aptitudes en Fotografía y Diseño UI.
+            </h2>
+            <div class="content-span">
+                <div>
+                    <a
+                        class="content-link"
+                        href="https://drive.google.com/file/d/1xvJ6Sbke-Vb6HcUfeR-rAvHWHpuLw6id/view?usp=sharing"
+                        referrerpolicy="no-referrer"
+                        target="_blank"
+                    >
+                        <Cv />
+                    </a>
+                </div>
+                <p class="span">@ulhis</p>
+            </div>
         </div>
     </div>
-  </div>
 </section>
 
 <style>
-.hero{
-  width: var(--z-box);
-  margin: 4rem auto;
-}
-.header{
-  min-width: 272px;
-  margin: 0 auto;
-
-}
-.header-title{
-  font-size: var(--s-title);
-  font-weight: 400;
-  color: var(--c-burning-sand);
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
-   
-  .title-span{
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-  }
-  .star svg{
-    width: 25px;
-    height: 25px;
-  }
- 
-}
-
-.content{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 4rem;
-
-  .content-image{
-    border-radius: var(--b-radius);
-    width: var(--z-img-big);
-    height: var(--z-img-big);
-    background: conic-gradient(from 270deg at 50% 50%, #f2f2f2 0%, #012340 100%);
-    
-    .image-profile{
-      width: var(--z-img-big);
-      height: var(--z-img-big);
-      border-radius: var(--b-radius);
+    .hero {
+        width: var(--z-box);
+        margin: 4rem auto;
     }
-  }
-  .content-box{
-    border-radius: var(--b-radius);
-    background: conic-gradient(from 270deg at 50% 50%, #f2f2f2 0%, #012340 100%);
-    width: clamp(6.25rem, 3.4091rem + 14.2045vw, 12.5rem);
-    height: clamp(6.25rem, 3.4091rem + 14.2045vw, 12.5rem);
-  }
-  .content-description{
-    .content-subtitle{
-      color: var(--c-big-stone-high);
-      font-weight: 400;
-      font-size: clamp(1.125rem, 1.0682rem + 0.2841vw, 1.25rem);
-      width: clamp(9.375rem, 7.3864rem + 9.9432vw, 13.75rem);
+    .header {
+        min-width: 272px;
+        margin: 0 auto;
     }
-    .content-span{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      .content-link{
-        color: var(--c-big-stone-moderate);
-        scale: 1;
-        width: 32px;
-        height: 32px;
-        transition: color 0.45s ease-in-out,
-                    scale 0.45s ease-in-out;
-
-      }
-      .content-link:hover{
+    .header-title {
+        font-size: var(--s-title);
+        font-weight: 400;
         color: var(--c-burning-sand);
-        scale: 1.15;
-      }
-      .span{
-        color: var(--c-burning-sand);
-      }
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+
+        .title-span {
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+        }
+        .star svg {
+            width: 25px;
+            height: 25px;
+        }
     }
-  }
-}
 
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 4rem;
 
-@media(width <=425px){
-  .content{
-    justify-content: center;
-  }
-}
+        .content-image {
+            border-radius: var(--b-radius);
+            width: var(--z-img-big);
+            height: var(--z-img-big);
+            background: conic-gradient(
+                from 270deg at 50% 50%,
+                #f2f2f2 0%,
+                #012340 100%
+            );
 
+            .image-profile {
+                width: var(--z-img-big);
+                height: var(--z-img-big);
+                border-radius: var(--b-radius);
+            }
+        }
+        .content-box {
+            border-radius: var(--b-radius);
+            background: conic-gradient(
+                from 270deg at 50% 50%,
+                #f2f2f2 0%,
+                #012340 100%
+            );
+            width: clamp(6.25rem, 3.4091rem + 14.2045vw, 12.5rem);
+            height: clamp(6.25rem, 3.4091rem + 14.2045vw, 12.5rem);
+        }
+        .content-description {
+            .content-subtitle {
+                color: var(--c-big-stone-high);
+                font-weight: 400;
+                font-size: clamp(1.125rem, 1.0682rem + 0.2841vw, 1.25rem);
+                width: clamp(9.375rem, 7.3864rem + 9.9432vw, 13.75rem);
+            }
+            .content-span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                .content-link {
+                    color: var(--c-big-stone-moderate);
+                    scale: 1;
+                    width: 32px;
+                    height: 32px;
+                    transition:
+                        color 0.45s ease-in-out,
+                        scale 0.45s ease-in-out;
+                }
+                .content-link:hover {
+                    color: var(--c-burning-sand);
+                    scale: 1.15;
+                }
+                .span {
+                    color: var(--c-burning-sand);
+                }
+            }
+        }
+    }
+
+    @media (width <=425px) {
+        .content {
+            justify-content: center;
+        }
+    }
 </style>
