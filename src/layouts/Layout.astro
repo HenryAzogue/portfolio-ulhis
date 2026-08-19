@@ -1,128 +1,269 @@
 ---
-import Header from "@components/Header.astro"
-import Footer from "@components/Footer.astro"
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 ---
+
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-    <meta name="description" content="Soy Ulises desarrollador web y con habilidades en diseño y fotografía, motivado por llevar las ideas y productos de personas que expresan su arte a través de sus servicios a una experiencia digital." />
+		<meta
+			name="description"
+			content="Soy Ulises desarrollador web y con habilidades en diseño y fotografía, motivado por llevar las ideas y productos de personas que expresan su arte a través de sus servicios a una experiencia digital."
+		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
 		<title>Ulhis</title>
 	</head>
 	<body>
-      <Header />
-      <main>
-        <slot />
-      </main>
-      <Footer /> 
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 
 <style>
+	@font-face {
+		font-family: "PPMori";
+		src: url("/font/pp_mori/PPMori-Extralight.woff2")
+			format(woff2);
+		font-weight: 200;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "PPMori";
+		src: url("/font/pp_mori/PPMori-ExtralightItalic.woff2")
+			format(woff2);
+		font-weight: 200;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "PPMori";
+		src: url("/font/pp_mori/PPMori-Regular.woff2")
+			format(woff2);
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "PPMori";
+		src: url("/font/pp_mori/PPMori-RegularItalic.woff2")
+			format(woff2);
+		font-weight: 500;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "PPMori";
+		src: url("/font/pp_mori/PPMori-Semibold.woff2")
+			format(woff2);
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "PPMori";
+		src: url("/font/pp_mori/PPMuseum-Regular.woff2")
+			format(woff2);
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "PPMuseum";
+		src: url("/font/pp_museum/PPMuseum-Ultrabold.woff2")
+			format(woff2);
+		font-weight: 800;
+		font-style: normal;
+		font-display: swap;
+	}
 
+	/* Aquí definimos las Custom properties */
+	:root {
+		/* Colors */
+		--c-big-stone: hsl(203, 97%, 13%);
+		--c-big-stone-high: hsla(203, 97%, 13%, 0.9);
+		--c-big-stone-moderate: hsla(203, 97%, 13%, 0.7);
+		--c-bison-hide: hsl(40, 17%, 70%);
+		--c-burning-sand: hsl(16, 56%, 66%);
+		--c-burning-sand-light: hsla(16, 56%, 66%, 0.7);
+		--c-concrete: hsl(0, 0%, 95%);
 
-/* Aquí definimos las Custom properties */
-:root {
-/* Colors */
-  --c-big-stone: hsl(203, 97%, 13%);
-  --c-big-stone-high:hsla(203, 97%, 13%, 0.90);
-  --c-big-stone-moderate:hsla(203, 97%, 13%, 0.70);
-  --c-bison-hide: hsl(40, 17%, 70%);
-  --c-burning-sand: hsl(16, 56%, 66%);
-  --c-burning-sand-light:hsla(16, 56%, 66%, 0.70);
-  --c-concrete: hsl(0, 0%, 95%);
+		--colore-tamarind: #261e30;
+		--colore-burntUmber: #784454;
+		--colore-atomicTangerine: #c4b9cb;
+		--colore-paarl: #91665c;
+		--colore-inchWorn: #31e87a;
 
-/* Size text*/
-  --s-title: clamp(1.875rem, 0.0693rem + 7.7042vw, 5rem);
-	--s-subtitle: clamp(1.5rem, 1.1591rem + 1.7045vw, 2.25rem);	
-	--s-paragraph: clamp(1.125rem, 1.0528rem + 0.3082vw, 1.15rem);
-  --s-title-section: clamp(1.375rem, 1.3028rem + 0.3082vw, 1.5rem);
-  --s-special: clamp(2.5rem, 1.7777rem + 3.0817vw, 3.75rem);
+		/* Size text*/
+		--size-font-title: clamp(
+			1.875rem,
+			6.8519vw + 0.5046rem,
+			6.5rem
+		);
+		--s-title: clamp(1.875rem, 0.0693rem + 7.7042vw, 5rem);
+		--s-subtitle: clamp(
+			1.5rem,
+			1.1591rem + 1.7045vw,
+			2.25rem
+		);
+		--s-paragraph: clamp(
+			1.125rem,
+			1.0528rem + 0.3082vw,
+			1.15rem
+		);
+		--s-title-section: clamp(
+			1.375rem,
+			1.3028rem + 0.3082vw,
+			1.5rem
+		);
+		--s-special: clamp(
+			2.5rem,
+			1.7777rem + 3.0817vw,
+			3.75rem
+		);
+		--size-font-text-special: clamp(
+			0.875rem,
+			0.4464vw + 0.7857rem,
+			1.5rem
+		);
 
-/* Size box*/
-  --z-hf: clamp(18rem, -2.0000rem + 100.0000vw, 62rem);
-  --z-box: clamp(18rem, -1.6364rem + 93.1818vw, 58rem);
-  --z-img-big: clamp(17rem, 16.2045rem + 3.9773vw, 18.75rem);
+		/* Size box*/
+		--z-hf: clamp(18rem, -2rem + 100vw, 62rem);
+		--z-box: clamp(18rem, -1.6364rem + 93.1818vw, 58rem);
+		--z-img-big: clamp(
+			17rem,
+			16.2045rem + 3.9773vw,
+			18.75rem
+		);
+		--sizing-box-logo: clamp(
+			1.5625rem,
+			3.3482vw + 0.8929rem,
+			6.25rem
+		);
+		--sizing-box-icon-decoration: clamp(
+			0.9375rem,
+			0.7589vw + 0.7857rem,
+			2rem
+		);
 
-/* Border */
-  --b-radius: 15px;
+		/* Border */
+		--b-radius: 15px;
 
-/* Fonts  */
-  --font-context: Helvetica, sans-serif;
-  --font-special: MonsieurLaDoulaise;
-}
+		/* Padding */
+		--padding-global-box: clamp(
+			0.4375rem,
+			3.3482vw + -0.2321rem,
+			5.125rem
+		);
+		--padding-global-inline: clamp(
+			5.125rem,
+			1.3393vw + 4.8571rem,
+			7rem
+		);
 
-/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    -webkit-animation: none !important;
-            animation: none !important;
-    -webkit-transition: none !important;
-    transition: none !important;
-  }
-}
+		/* Fonts  */
+		--font-context: PPMori, sans-serif;
+		--font-special: PPMuseum;
+	}
 
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  vertical-align: baseline;
-}
+	/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+	@media (prefers-reduced-motion: reduce) {
+		* {
+			-webkit-animation: none !important;
+			animation: none !important;
+			-webkit-transition: none !important;
+			transition: none !important;
+		}
+	}
 
-img, picture, video, iframe, figure {
-  max-width: 100%;
-  width: 100%;
-  display: block;
-}
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		vertical-align: baseline;
+	}
 
-a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-}
+	img,
+	picture,
+	video,
+	iframe,
+	figure {
+		max-width: 100%;
+		width: 100%;
+		display: block;
+	}
 
-p a {
-  display: inline;
-}
+	a {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		font-size: inherit;
+	}
 
-li {
-  list-style-type: none;
-  list-style: none;
-}
+	p a {
+		display: inline;
+	}
 
-html {
-  scroll-behavior: smooth;
-}
+	li {
+		list-style-type: none;
+		list-style: none;
+	}
 
-h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
-  font-size: 1em;
-  font-weight: inherit;
-  font-style: inherit;
-  text-decoration: none;
-  color: inherit;
-  margin: 0;
-}
+	html {
+		scroll-behavior: smooth;
+	}
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
-}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span,
+	a,
+	strong,
+	blockquote,
+	i,
+	b,
+	u,
+	em {
+		font-size: 1em;
+		font-weight: inherit;
+		font-style: inherit;
+		text-decoration: none;
+		color: inherit;
+		margin: 0;
+	}
 
-svg {
-  width: 100%;
-  display: block;
-  fill: currentColor;
-}
+	blockquote:before,
+	blockquote:after,
+	q:before,
+	q:after {
+		content: "";
+		content: none;
+	}
 
-body {
-	background-image: url("/back-img.webp");
-	font-family:  var(--font-context);
-  font-size: 100%;
-}
+	svg {
+		width: 100%;
+		display: block;
+		fill: currentColor;
+	}
 
+	body {
+		background-color: var(--colore-atomicTangerine);
+		font-family: var(--font-context);
+		font-size: 100%;
+	}
 </style>
