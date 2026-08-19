@@ -1,92 +1,123 @@
 ---
-
+// import Logo from "public/icon-l1.svg";
 ---
 
-<header id="#contact" class="header">
-  <a href="#" class="header-logo">
-    <span class="logo-n1">u</span>
-    <span class="logo-n2">lhis</span>
-  </a>
-  <nav class="header-nav">
-    <li class="nav-li">
-      <a href="#projects" class="link-navigate">
-        Proyectos</li>
-      </a>
-    <li class="nav-li">
-      <a href="#about" class="link-navigate">
-        Acerca de mí</li>
-      </a>
-  </nav>
-  <div class="header-content">
-    <a class="link-navigate" href="#contact">Contáctame</a>
-  </div>
+<header class="header">
+	<div class="logo">
+		<div class="logo-box">
+			<img
+				class="box-logo-svg"
+				src="/icon-l1.svg"
+				alt="icono representativo de Henry Azogue"
+			/>
+			<span class="box-logo-nike">@ulhis</span>
+		</div>
+		<span class="box-logo-text">Portfolio v2</span>
+		<span class="box-logo-text-state">
+			Disponible
+			<img
+				class="text-state-svg"
+				src="/icon-l4.svg"
+				alt="icono de referencia para disponibilidad para trabajos"
+			/>
+		</span>
+	</div>
+	<div class="navigate">
+		<nav class="navigate-box">
+			<li class="box-content">
+				<a class="box-link" href="#">| Inicio</a>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#">| Experiencia</a>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#">| Acerca de mí</a>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#">| Contactame</a>
+			</li>
+		</nav>
+		<nav class="navigate-box">
+			<li class="box-content">
+				<a class="box-link" href="#">| Cv</a>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#"
+					>| Hnrazogue@gmail.com</a
+				>
+			</li>
+		</nav>
+	</div>
 </header>
 
 <style>
-.header{
-  color: var(--c-big-stone);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 7px;
-  width: var(--z-hf);
-  margin: 0 auto;
-  
-  a{
-    list-style-type: circle;
-  text-decoration: none;
-  color: var(--c-big-stone);
-  }
-}
+	.header {
+		margin: 0 var(--padding-global-box);
+		padding-top: 4px;
+		display: flex;
+		flex-direction: column;
+		gap: 82px;
+	}
 
-.header-logo{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
+	.logo {
+		color: var(--colore-tamarind);
+		font-size: var(--size-font-text-special);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.logo-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 7px;
+	}
+	.box-logo-svg {
+		width: var(--sizing-box-logo);
+		height: var(--sizing-box-logo);
+		color: var(--colore-tamarind);
+	}
+	.box-logo-nike {
+		font-family: var(--font-special);
+	}
+	.box-logo-text {
+	}
+	.box-logo-text-state {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1px;
+	}
+	.text-state-svg {
+		color: var(--colore-inchWorn);
+		width: var(--sizing-box-icon-decoration);
+		height: var(--sizing-box-icon-decoration);
+	}
 
-}
-.logo-n1{
-  font-size: 18px;
-  font-family: var(--font-special);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.logo-n2{
-  font-size: 19px;
-}
+	.navigate {
+		display: flex;
+		justify-content: space-between;
+	}
+	.navigate-box {
+		display: flex;
+		gap: 1rem;
+	}
+	.box-content {
+		list-style: none;
+	}
+	.box-link {
+		color: var(--colore-tamarind);
+		font-size: var(--size-font-text-special);
+		text-decoration: none;
+	}
+	.box-link:hover {
+		color: var(--colore-burntUmber);
+		transition: color 0.25s ease-in-out;
+	}
 
-.header-nav{
-  display: none;
-  /* display: flex; */
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-}
-.nav-li {
-  list-style-type: none;
-}
-
-.link-navigate{ 
-  list-style-type: circle;
-  text-decoration: none;
-  color: var(--c-big-stone);
-}
-.link-navigate:hover{
-  color: var(--c-burning-sand-light);
-  transition: color 0.25s ease-in-out;
-}
-
-.header-content{
-  color: var(--c-big-stone); 
-}
-@media (width >=736px){
-  .header{
-    
-  }
-  .header-nav{
-    display: flex;
-  }
-}
-
+	@media (width <=736px) {
+		.navigate {
+			display: none;
+		}
+	}
 </style>
