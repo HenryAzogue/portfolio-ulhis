@@ -4,21 +4,129 @@ import Dribblen from "@icons/Dribblen.astro";
 import Git from "@icons/Git.astro";
 import Gmail from "@icons/Gmail.astro";
 import Linkedin from "@icons/Linkedin.astro";
-
 ---
-<div class="slider">
-  <marquee behavior="" direction="">
-■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen ■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen ■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen ■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen ■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen ■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen ■ LinkedIn ■ Behance ■ Gmail ■ GitHub ■ Dribbblen
-    </div>
-  </marquee>
+
+<div class="scroller">
+	<ul class="tag-list scroller__inner">
+		<li class="li-content">
+			<span class="content-span">■ LinkedIn</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ Behance</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ GitHub</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ Pinteres</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ LinkedIn</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ Behance</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ GitHub</span>
+		</li>
+		<li class="li-content">
+			<span class="content-span">■ Pinteres</span>
+		</li>
+	</ul>
 </div>
 
 <style>
-  .slider{
-    letter-spacing: 2px;
-    padding-block: 1rem;
-    border: solid 1px var(--c-burning-sand-light); 
-    font-size: 18px;
-    color: var(--c-big-stone-moderate);
-  }
+	.scroller {
+		color: var(--colore-tamarind);
+		/*padding: 2rem 0;*/
+		margin: 0 var(--padding-global-box);
+		width: auto;
+	}
+	.scroller__inner {
+		/*padding-block: 1rem;*/
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+	.li-content {
+		list-style: none;
+	}
+	.content-span {
+		font-weight: 200;
+		letter-spacing: 1px;
+		font-size: clamp(1rem, 0.8929vw + 0.8214rem, 2.25rem);
+	}
+	.scroller[data-animated="true"] {
+		overflow: hidden;
+		-webkit-mask: linear-gradient(
+			90deg,
+			transparent,
+			white 10%,
+			white 98%,
+			transparent
+		);
+		mask: linear-gradient(
+			90deg,
+			transparent,
+			white 10%,
+			white 98%,
+			transparent
+		);
+	}
+	.scroller[data-animated="true"] .scroller__inner {
+		width: max-content;
+		flex-wrap: nowrap;
+		animation: scroll 48s linear infinite;
+	}
+
+	@keyframes scroll {
+		to {
+			transform: translate(calc(-50% - 0.5rem));
+		}
+	}
 </style>
+
+<script>
+	// 1. Seleccionamos la lista y la forzamos a ser un array de HTMLElement
+	const scrollers = Array.from(
+		document.querySelectorAll(".scroller"),
+	) as HTMLElement[];
+
+	if (
+		!window.matchMedia("(prefers-reduced-motion: reduce)")
+			.matches
+	) {
+		addAnimation();
+	}
+
+	function addAnimation() {
+		scrollers.forEach((scroller) => {
+			scroller.setAttribute("data-animated", "true");
+
+			// 2. Buscamos el hijo y verificamos que exista antes de usarlo
+			const scrollerInner = scroller.querySelector(
+				".scroller__inner",
+			) as HTMLElement;
+
+			if (!scrollerInner) return;
+
+			// 3. Convertimos HTMLCollection a Array para iterar
+			const scrollerContent = Array.from(
+				scrollerInner.children,
+			);
+
+			scrollerContent.forEach((item) => {
+				// 4. cloneNode devuelve Node, necesitamos castear a HTMLElement
+				const duplicateItem = item.cloneNode(
+					true,
+				) as HTMLElement;
+
+				// Verificación de seguridad opcional pero recomendada
+				if (duplicateItem) {
+					duplicateItem.setAttribute("aria-hidden", "true");
+					scrollerInner.appendChild(duplicateItem);
+				}
+			});
+		});
+	}
+</script>
