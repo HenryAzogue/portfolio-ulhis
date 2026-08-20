@@ -1,175 +1,104 @@
 ---
-import Cv from "@icons/Cv.astro";
-import Star from "@icons/Star.astro";
+
 ---
 
 <section class="hero">
-    <div class="header">
-        <h1 class="header-title">
-            <span class="title-span">
-                Henry Azogue
-                <div class="star">
-                    <Star />
-                </div>
-            </span>
-            Web Developer
-        </h1>
-    </div>
-
-    <div class="content">
-        <div class="content-image">
-            <img
-                class="image-profile"
-                src="/image/profile.webp"
-                alt="Foto de perfil del chico desarrollador web"
-            />
-        </div>
-        <div class="content-box"></div>
-        <div class="content-description">
-            <h2 class="content-subtitle">
-                Desarrollador web con aptitudes en Fotografía y Diseño UI.
-            </h2>
-            <div class="content-span">
-                <div>
-                    <a
-                        class="content-link"
-                        href="https://drive.google.com/file/d/1xvJ6Sbke-Vb6HcUfeR-rAvHWHpuLw6id/view?usp=sharing"
-                        referrerpolicy="no-referrer"
-                        target="_blank"
-                    >
-                        <Cv />
-                    </a>
-                </div>
-                <p class="span">
-                    <a
-                        class="span-link"
-                        href="https://www.behance.net/henryazogue"
-                        referrerpolicy="no-referrer"
-                        target="_blank"
-                    >
-                        @ulhis
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
+	<h1 class="hero-title">Desarrollador Front-End</h1>
+	<div class="hero-box">
+		<img
+			class="box-image"
+			src="/image/image-hero-v001.avif"
+			alt="Imagen del creador Henry"
+		/>
+		<span class="box-span">Hola!</span>
+		<section class="box-section">
+			<h2 class="section-title">Soy Henry Azogue</h2>
+			<p class="section-text">
+				Desarrollador web enfocado en el <em>Front-end</em> con
+				capacidades en <em>Diseño Web</em>, <em
+					>Fotografía</em
+				> & desarrollo
+				<em>Back-end</em>.
+			</p>
+		</section>
+	</div>
 </section>
 
 <style>
-    .hero {
-        width: var(--z-box);
-        margin: 4rem auto;
-    }
-    .header {
-        min-width: 272px;
-        margin: 0 auto;
-    }
-    .header-title {
-        font-size: var(--s-title);
-        font-weight: 400;
-        color: var(--c-burning-sand);
-        display: flex;
-        flex-direction: column;
-        text-transform: uppercase;
+	.hero {
+		color: var(--colore-tamarind);
+		padding: 2rem 0;
+		margin: 0 var(--padding-global-box);
+	}
+	.hero-title {
+		font-size: var(--size-font-title);
+		font-family: var(--font-special);
+		font-weight: 800;
+		letter-spacing: -2px;
+		text-align: center;
+		margin: 0;
+	}
 
-        .title-span {
-            display: flex;
-            flex-direction: row;
-            align-items: end;
-        }
-        .star svg {
-            width: 25px;
-            height: 25px;
-        }
-    }
-
-    .content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: end;
-        justify-content: space-between;
-        gap: 10px;
-        margin-top: 4rem;
-
-        .content-image {
-            border-radius: var(--b-radius);
-            width: var(--z-img-big);
-            height: var(--z-img-big);
-            background: conic-gradient(
-                from 270deg at 50% 50%,
-                #f2f2f2 0%,
-                #012340 100%
-            );
-
-            .image-profile {
-                width: var(--z-img-big);
-                height: var(--z-img-big);
-                border-radius: var(--b-radius);
-            }
-        }
-        .content-box {
-            border-radius: var(--b-radius);
-            background: conic-gradient(
-                from 270deg at 50% 50%,
-                #f2f2f2 0%,
-                #012340 100%
-            );
-            width: clamp(6.25rem, 3.4091rem + 14.2045vw, 12.5rem);
-            height: clamp(6.25rem, 3.4091rem + 14.2045vw, 12.5rem);
-        }
-        .content-description {
-            .content-subtitle {
-                color: var(--c-big-stone-high);
-                font-weight: 400;
-                font-size: clamp(1.125rem, 1.0682rem + 0.2841vw, 1.25rem);
-                width: clamp(9.375rem, 7.3864rem + 9.9432vw, 13.75rem);
-            }
-            .content-span {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                .content-link {
-                    color: var(--c-big-stone-moderate);
-                    scale: 1;
-                    width: 32px;
-                    height: 32px;
-                    transition:
-                        color 0.45s ease-in-out,
-                        scale 0.45s ease-in-out;
-                }
-                .content-link:hover {
-                    color: var(--c-burning-sand);
-                    scale: 1.15;
-                }
-                .span {
-                    color: var(--c-burning-sand);
-                }
-            }
-        }
-    }
-    .span-link {
-        text-decoration: none;
-        font-size: 16px;
-        color: var(--c-big-stone-moderate);
-        border-radius: 15px;
-        border: 1px solid var(--c-big-stone-moderate);
-
-        /*width: 115px;*/
-        padding: 5px 16px;
-        transition:
-            background-color 0.45s ease-in-out,
-            color 0.45s ease-in-out,
-            scale 0.45s ease-in-out;
-    }
-    .span-link:hover {
-        background-color: var(--c-burning-sand);
-        color: var(--c-concrete);
-        scale: 1.15;
-    }
-
-    @media (width <=425px) {
-        .content {
-            justify-content: center;
-        }
-    }
+	.hero-box {
+		position: relative;
+	}
+	.box-image {
+		width: 100%;
+		height: clamp(
+			34.6875rem,
+			30.5804vw + 28.5714rem,
+			77.5rem
+		);
+		aspect-ratio: 7/5;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+	.box-span {
+		position: absolute;
+		top: clamp(1.25rem, 2.7679vw + 0.6964rem, 5.125rem);
+		left: 0px;
+		font-size: var(--size-font-text-normal);
+	}
+	.box-section {
+		position: absolute;
+		top: clamp(1.25rem, 2.7679vw + 0.6964rem, 5.125rem);
+		right: 0px;
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+	}
+	.section-title {
+		font-family: var(--font-special);
+		letter-spacing: -2px;
+		font-size: clamp(
+			1.75rem,
+			3.2143vw + 1.1071rem,
+			6.25rem
+		);
+		width: clamp(
+			9.5628rem,
+			28.5712vw + 3.8486rem,
+			49.5625rem
+		);
+		margin: 0;
+	}
+	.section-text {
+		margin: 0;
+		width: clamp(
+			9.5628rem,
+			28.5712vw + 3.8486rem,
+			49.5625rem
+		);
+		font-size: var(--size-font-text-normal);
+	}
+	@media (width <=425px) {
+		.box-image {
+			object-position: -285px 0px;
+		}
+	}
+	@media (width >= 768px) {
+		.header-title {
+			letter-spacing: -5px;
+		}
+	}
 </style>
