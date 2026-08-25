@@ -78,7 +78,7 @@
     "state": "concluida",
     "startDate": "19 julio 2026, 21:29:34",
     "endDate": "06 agosto 2026, 18:28:47",
-    "tags": ["#Lunacy", "#diseño", "#ux/ui"],
+    "tags": "#Lunacy #diseño #ux/ui",
     "credits":"Fotos de Instagram [ @leosneakers]",
     "highlights": [
       "Leo sneakers es un emprendimiento enfocado en la venta y distribución de zapatillas deportivas. Por lo que este trabajo es un concept-art de un e-commerce para Leo, siendo una propuesta para implementarlo o trabajar como base y seguir iterando en nuevas prespectivas de la UX/UI."
@@ -98,7 +98,7 @@
     "state": "ok",
     "startDate": "03 febrero 2026, 04:01:04",
     "endDate": "18 julio 2026, 00:43:55",
-    "tags": ["#fotografía", "#moda","#lunacy", "#diseño", "#ux/ui"],
+    "tags": "#fotografía #moda #lunacy #diseño #ux/ui",
     "credits":"Fotos de Unsplash [ @Alan J. Hendry  @jakubzerdzicki  @samsungmemory @behy_studio, @kovah, @nicolasjleclercq  ]",
     "highlights": [
       "365 Seguridad es un concept art de una landing page para un chico emprendedor que en su tiempo libre trabaja en el area de la seguridad, el diseño esta realizado por Lunacy por la facilidad de trabajar sin internet. Lo desarrolle con Astro y esta desplegado en Vercel."
@@ -118,7 +118,7 @@
     "state": "ok",
     "startDate": "09 marzo 2025, 21:32:07",
     "endDate": "13 agosto 2026, 00:12:09",
-    "tags": ["#lunacy", "#diseño", "#ux/ui"],
+    "tags": "#lunacy #diseño #ux/ui",
     "credits":"Fotos de Facebook [ @crediPasa ]",
     "highlights": [
       "Todos los créditos a la Caja de Ahorros CrediPasa por el material obtenido (imágenes y texto), que es de su propiedad. El diseño web se construyó en base a la información que manejan en su cuenta pública de Facebook y su página web. Se aplicó un enfoque más cerrado de la información, segmentando así las diferentes secciones con sus respectivos servicios que ofrece CrediPasa, de esta manera el usuario final tendrá una mejor comprensión de la empresa."
