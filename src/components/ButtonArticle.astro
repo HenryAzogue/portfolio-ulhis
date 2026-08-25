@@ -1,0 +1,59 @@
+---
+interface Props {
+	urlProjects: {
+		urlBehance?: string;
+		urlRepository?: string;
+		urlWebSite?: string;
+	};
+}
+
+const { urlProjects } = Astro.props;
+const newLinks = [
+	{ label: "Diseño", url: urlProjects.urlBehance },
+	{ label: "Código", url: urlProjects.urlRepository },
+	{ label: "Página Web", url: urlProjects.urlWebSite },
+].filter((link) => link.url && link.url.trim() !== "");
+---
+
+<div class="content-btn">
+	{
+		newLinks.map((link) => (
+			<a
+				class="button-card"
+				href={link.url}
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				{link.label}
+			</a>
+		))
+	}
+</div>
+
+<style>
+	.content-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.button-card {
+		font-family: var(--font-special);
+		font-size: 19px;
+		color: var(--colore-atomicTangerine);
+		background-color: var(--colore-burntUmber);
+		border: 1px solid var(--colore-paarl);
+		border-radius: 8px;
+		text-decoration: none;
+		padding: 7px 14px;
+		transition:
+			background-color 0.5s ease-in-out,
+			color 0.5s ease-in-out,
+			border 0.5s ease-in-out;
+	}
+	.button-card:hover {
+		background-color: var(--colore-atomicTangerine);
+		border: 1px solid var(--colore-burntUmber);
+		color: var(--colore-tamarind);
+	}
+</style>

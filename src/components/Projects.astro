@@ -1,143 +1,215 @@
 ---
-import LinkCard from './LinkCard.astro';
-import SubTitle from './SubTitle.astro';
-import {projects} from '@lib/cv.json';
-
+import ButtonArticle from "./ButtonArticle.astro";
+import SubTitle from "./SubTitle.astro";
+import { projects } from "@lib/cv.json";
 ---
-<section class="projects" id="projects">
-  <SubTitle letterFrist="P" letterSecond='royectos'/>
-  <div class="project-content">
-    {
-      projects.map(({title, tags, imagen, imgDescription, highlights, urlProjects})=>{
-        return(
-          <li>
-            <article class="article">
-              <header class="article-header">
-                <h2 class="header-title">{title}</h2>
-                <div class="context">
-                  <p class="context-paragraph">{highlights[0]}</p>
-                  <div class="context-tags">{tags.map((tag)=>{return(<span class="tag">{tag}</span>)})}</div>
-                </div>
-                <div class="url-rrss">
-                  <LinkCard href={urlProjects[2]} target="_blank">
-                    <svg  
-                      slot="after"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
-                        <path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-                        <path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-                        <path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-                    </svg>
-                    Diseño
-                  </LinkCard>
-                </div>
-              </header>
-              <footer class="article-footer">
-                <img class="footer-image" src={imagen} alt={imgDescription} decoding="async" loading="lazy" />
-              </footer>
-            </article>
-          </li>
 
-        )
-      })
-    }
-  </div>
+<section class="project" id="projects">
+	<div class="project-header">
+		<SubTitle titlleSection="Mis proyectos" />
+		<p class="header-text">
+			➺ Son el reflejo de los muchos intentos que pasé a lo
+			largo de esta travesía - llamado experiencia -.
+		</p>
+	</div>
+	<div class="project-content">
+		{
+			projects.map(
+				({
+					title,
+					subtitle,
+					tags,
+					imgPortada,
+					imgDescription,
+					highlights,
+					urlProjects,
+					credits,
+				}) => {
+					return (
+						<article class="content-card">
+							<div class="card-detail">
+								<div class="detail-circul" />
+								<div class="detail-circul" />
+								<div class="detail-circul" />
+							</div>
+							<header class="card-header">
+								<h2 class="header-title">
+									{title} ➺ {subtitle}
+								</h2>
+							</header>
+							<div class="article-body">
+								<p class="article-text">
+									{highlights?.[0]}
+								</p>
+								<span class="article-tag">{tags}</span>
+								<ButtonArticle urlProjects={urlProjects} />
+							</div>
+							<footer class="article-footer">
+								<img
+									src={imgPortada}
+									decoding={"async"}
+									alt={imgDescription}
+									class="footer-image"
+								/>
+								<p class="footer-credits">{credits}</p>
+							</footer>
+						</article>
+					);
+				},
+			)
+		}
+	</div>
 </section>
 
 <style>
-  li{
-    list-style: none;
-    border-radius: 1px;
-    padding: 2rem 0;
-    border-bottom: solid 1px var(--c-burning-sand-light);
-  }
-  .projects{
-    margin: 4rem auto;
-    width: var(--z-box);
-  }
-  .project-content{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-  }
-  .article{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;    
+	.project {
+		margin: 0 var(--padding-global-box);
+		padding-block: var(--padding-global-block);
+	}
+	.project-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+	.header-text {
+		font-size: var(--size-font-text-normal);
+		color: var(--colore-tamarind);
+		width: clamp(
+			19.125rem,
+			11.2321rem + 39.4643vw,
+			74.375rem
+		);
+		margin: 0;
+	}
 
-    .article-header{
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      
-      .header-title{
-        color: var(--c-big-stone);
-        font-size: var(--s-subtitle);
-        margin: 0;
-      }
-    }
-  }
-  .context{
-    font-size: var(--s-paragraph);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+	.project-content {
+		--value-card: clamp(
+			19.125rem,
+			15.7679rem + 16.7857vw,
+			42.625rem
+		);
+		display: grid;
+		grid-template-columns: repeat(
+			auto-fill,
+			minmax(var(--value-card), 1fr)
+		);
+		gap: 1rem;
+		padding-top: var(--padding-global-block);
+	}
 
-    .context-paragraph{
-      color: var(--c-big-stone-high);
-      margin: 0;
-      padding-bottom: 5px;
-    }
-  }
-  .context-tags{
-    display: flex;
-    flex-flow: row wrap;
-    gap: 10px;
-    margin: 0;
-    width: 100%;
+	.content-card {
+		color: var(--colore-atomicTangerine);
+		border-radius: 8px;
+		background-color: var(--colore-tamarind);
+		animation: reveal linear both;
+		animation-timeline: view();
+		animation-range: entry 5% cover 28%;
+		width: 100%;
+		height: auto;
 
-    .tag{
-      color: var(--c-burning-sand);
-      font-style: italic;
-      font-weight: 400;
-    }
-  }
-  .url-rrss{
-    border-radius: var(--b-radius);
-    border: solid 1px var(--c-burning-sand-light);
-    padding: 1rem;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 10px;
-  }
-  svg{
-    width: 16px;
-    height: 16px;
-  }
-  .article-footer{
-    .footer-image{
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      border-radius: var(--b-radius);
-      border: solid 1px var(--c-burning-sand-light);
-      width: 100%;
-      height: 100%;
-    }
-  }
-  @media(width >= 743px){
-    .article{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+		margin-bottom: 1rem;
+	}
+	.card-detail {
+		background-color: var(--colore-concrete);
+		border-radius: 8px 8px 0 0;
+
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		padding: 0 12px;
+		height: 24px;
+	}
+	.detail-circul {
+		background-color: #86b9d9;
+		border-radius: 50%;
+		width: 12px;
+		height: 12px;
+		/*margin: 0 12px;*/
+	}
+	.detail-circul:nth-child(1) {
+		border-radius: 50%;
+		background-color: #deafd4;
+		width: 12px;
+		height: 12px;
+	}
+	.detail-circul:nth-child(2) {
+		border-radius: 50%;
+		background: #d99177;
+		width: 12px;
+		height: 12px;
+	}
+
+	.card-header {
+	}
+	.header-title {
+		font-size: var(--size-font-title-article);
+		font-family: var(--font-special);
+		letter-spacing: -1px;
+		padding: 2rem var(--padding-card-project);
+		margin: 0;
+	}
+	.article-body {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 0 var(--padding-card-project);
+	}
+	.article-text {
+		font-size: var(--size-font-text-article);
+		letter-spacing: -1px;
+		margin: 0;
+	}
+	.article-tag {
+		font-size: clamp(
+			0.9375rem,
+			0.7143rem + 1.1161vw,
+			2.5rem
+		);
+		font-weight: 200;
+		font-style: italic;
+		text-align: center;
+	}
+	.article-footer {
+		padding: 2rem var(--padding-card-project);
+	}
+	.footer-image {
+		border-radius: 4px;
+		width: 100%;
+		height: clamp(
+			10.9375rem,
+			8.4821rem + 12.2768vw,
+			28.125rem
+		);
+		object-fit: cover;
+	}
+	.footer-credits {
+		text-align: center;
+		margin: 0;
+		padding-top: 7px;
+		font-size: 19px;
+	}
+
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			translate: 0 150px;
+		}
+		to {
+			opacity: 1;
+			translate: 0 0;
+		}
+	}
+
+	@media (width <= 768px) {
+		.project-header {
+			flex-direction: column;
+		}
+		.header-text {
+			/*width: 100%;*/
+		}
+		.project-content {
+		}
+	}
 </style>
