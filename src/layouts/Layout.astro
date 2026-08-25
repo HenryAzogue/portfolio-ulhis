@@ -95,8 +95,8 @@ import Footer from "@components/Footer.astro";
 		--c-bison-hide: hsl(40, 17%, 70%);
 		--c-burning-sand: hsl(16, 56%, 66%);
 		--c-burning-sand-light: hsla(16, 56%, 66%, 0.7);
-		--c-concrete: hsl(0, 0%, 95%);
 
+		--colore-concrete: hsl(0, 0%, 95%);
 		--colore-tamarind: #261e30;
 		--colore-burntUmber: #784454;
 		--colore-atomicTangerine: #c4b9cb;
@@ -109,6 +109,11 @@ import Footer from "@components/Footer.astro";
 			7.5vw + 1.375rem,
 			13.375rem
 		);
+		--size-font-title-section: clamp(
+			1.125rem,
+			0.3929rem + 3.6607vw,
+			6.25rem
+		);
 		--size-font-text-normal: clamp(
 			1rem,
 			1.4286vw + 0.7143rem,
@@ -118,6 +123,16 @@ import Footer from "@components/Footer.astro";
 			0.875rem,
 			0.4464vw + 0.7857rem,
 			1.5rem
+		);
+		--size-font-title-article: clamp(
+			1.125rem,
+			0.8571rem + 1.3393vw,
+			3rem
+		);
+		--size-font-text-article: clamp(
+			1rem,
+			0.8571rem + 0.7143vw,
+			2rem
 		);
 
 		/* Size box*/
@@ -148,10 +163,15 @@ import Footer from "@components/Footer.astro";
 			3.3482vw + -0.2321rem,
 			5.125rem
 		);
-		--padding-global-inline: clamp(
-			5.125rem,
-			1.3393vw + 4.8571rem,
+		--padding-global-block: clamp(
+			2rem,
+			1.2857rem + 3.5714vw,
 			7rem
+		);
+		--padding-card-project: clamp(
+			0.5rem,
+			0.2857rem + 1.0714vw,
+			2rem
 		);
 
 		/* Fonts  */
@@ -187,6 +207,9 @@ import Footer from "@components/Footer.astro";
 		width: 100%;
 		display: block;
 	}
+	p {
+		margin: 0;
+	}
 
 	a {
 		display: block;
@@ -197,6 +220,7 @@ import Footer from "@components/Footer.astro";
 
 	p a {
 		display: inline;
+		margin: 0;
 	}
 
 	li {
