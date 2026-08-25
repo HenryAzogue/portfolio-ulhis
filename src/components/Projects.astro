@@ -126,7 +126,6 @@ import { projects } from "@lib/cv.json";
 		border-radius: 50%;
 		width: 12px;
 		height: 12px;
-		/*margin: 0 12px;*/
 	}
 	.detail-circul:nth-child(1) {
 		border-radius: 50%;
@@ -162,11 +161,7 @@ import { projects } from "@lib/cv.json";
 		margin: 0;
 	}
 	.article-tag {
-		font-size: clamp(
-			0.9375rem,
-			0.7143rem + 1.1161vw,
-			2.5rem
-		);
+		font-size: var(--size-font-tags);
 		font-weight: 200;
 		font-style: italic;
 		text-align: center;
@@ -185,10 +180,11 @@ import { projects } from "@lib/cv.json";
 		object-fit: cover;
 	}
 	.footer-credits {
+		font-size: var(--size-font-credits);
 		text-align: center;
 		margin: 0;
 		padding-top: 7px;
-		font-size: 19px;
+		font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 2rem);
 	}
 
 	@keyframes reveal {

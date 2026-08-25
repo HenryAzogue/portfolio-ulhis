@@ -33,13 +33,18 @@ const newLinks = [
 <style>
 	.content-btn {
 		display: flex;
+		flex-flow: wrap;
 		align-items: center;
 		justify-content: center;
 		gap: 1rem;
 	}
 	.button-card {
 		font-family: var(--font-special);
-		font-size: 19px;
+		font-size: clamp(
+			1.125rem,
+			1.1161rem + 0.0446vw,
+			1.1875rem
+		);
 		color: var(--colore-atomicTangerine);
 		background-color: var(--colore-burntUmber);
 		border: 1px solid var(--colore-paarl);
