@@ -35,7 +35,13 @@ import Rrss from "./Rrss.astro";
 
 <style>
 	.contact {
-		padding: 236px var(--padding-global-block);
+		--size-padding-block: clamp(
+			5.125rem,
+			3.75rem + 6.875vw,
+			14.75rem
+		);
+		padding: var(--size-padding-block)
+			var(--padding-global-block);
 		color: var(--colore-atomicTangerine);
 		background-color: var(--colore-tamarind);
 	}
