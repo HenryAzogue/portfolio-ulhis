@@ -9,8 +9,23 @@ import Rrss from "./Rrss.astro";
 
 	<div class="contact-box">
 		<div class="box-legend">
-			<p class="legend-p">hnrazogue@gmail.com</p>
-			<span class="legend-span">LinkedIn Behance</span>
+			<a class="legend-p" href="mailto:hnrazogue@gmail.com"
+				>hnrazogue@gmail.com</a
+			>
+			<span class="legend-span">
+				<a
+					class="legend-span-a"
+					href="https://www.linkedin.com/in/henryazogue"
+					target="_blank"
+					rel="noopener noreferrer">LinkedIn</a
+				>
+				<a
+					class="legend-span-a"
+					href="https://www.behance.net/henryazogue"
+					target="_blank"
+					rel="noopener noreferrer">Behance</a
+				>
+			</span>
 		</div>
 		<p class="contact-span">
 			Call trans opt: received. 12-15-96 14:32:21 REC:Log ＞
@@ -51,9 +66,20 @@ import Rrss from "./Rrss.astro";
 		gap: 1rem;
 		.legend-p {
 			margin: 0;
+			text-decoration: none;
+			color: var(--colore-atomicTangerine);
 		}
 		.legend-span {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 1rem;
 			margin: 0;
+
+			.legend-span-a {
+				text-decoration: none;
+				color: var(--colore-atomicTangerine);
+			}
 		}
 	}
 	.contact-span {
