@@ -1,12 +1,15 @@
 {
   "basics": {
-    "name": "John Doe",
-    "label": "Programmer",
-    "image": "",
-    "email": "john@gmail.com",
+    "name": "Henry Azogue",
+    "label": "Desarrollador Front-End",
+    "image": "/image/image-hero-v001.avif",
+    "email": "hnrazogue@gmail.com",
     "phone": "(912) 555-4321",
-    "url": "https://johndoe.com",
-    "summary": "A summary of John Doe…",
+    "url": "https://henry-azogue.vercel.app/",
+    "summary": [
+      "Más allá del código, tengo la fascinación por la fotografía y esa pequeña capacidad del móvil para inmortalizar  en una imagen; un tiempo que no avanza, Un Recuerdo.",
+      "Elegí ser un creador para devolver al mundo todo lo que me regalo y con esto plasmar: ideas, trazos, fotos, lo que escribo, vivencias y cada proceso de pensamiento que me llevo a ese punto de acción que va ser contada desde mi punto de vista. Una historia que se escribe por cada día transcurrido."
+    ],
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -54,15 +57,32 @@
       "DB1101 - Basic SQL"
     ]
   }],
-  "skills": [{
-    "name": "Web Development",
-    "level": "Junior",
-    "keywords": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ]
-  }],
+  "skills": [
+    {
+    "id": "1",
+    "classSpecial": "skill-article-normal",
+    "title": "Desarrollo Web",
+    "description": "Utilizo Astro él Meta-Framework preferido + React para escalar dinámica mente y el despliegue lo realizo en Vercel.",
+    "image":"/image/skills-code.avif",
+    "imageAlt": "Imagen del editor de código donde está resaltando la construcción de un componente."
+    },
+    {
+    "id": "2",
+    "classSpecial": "skill-article-special",
+    "title": "Diseño Web",
+    "description": "Las ideas salen de revistas, pinterest, behance, fotos, visitas al museo y mucho más para despues pasarlas a Lunacy o Figma.",
+    "image":"/image/skills-design.avif",
+    "imageAlt": "Imagen de una flor con díez petalos con una mezcla de rosa oscuro y rosa pastel que le acompaña unas gotas de agua del rocío de la mañana."
+    },
+    {
+    "id": "3",
+    "classSpecial": "skill-article-normal",
+    "title": "Fotografía",
+    "description": "Mis shooting preferido: retrato, paisajes, moda y productos. Todo lo realizo con la cámara del móvil.",
+    "image":"/image/skills-photography.avif",
+    "imageAlt": "Imagen de una cámara Vivitar acostada en un césped verde."
+    }
+  ],
   "languages": [{
     "language": "Español",
     "fluency": "Nativo"
