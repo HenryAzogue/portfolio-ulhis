@@ -3,76 +3,152 @@
 ---
 
 <footer class="footer">
-    <div class="name">
-      <a href="#" class="header-logo">
-        <span class="logo-n1">u</span>
-        <span class="logo-n2">lhis</span>
-      </a>
-    </div>
-    <div class="text">
-      <span>Inspirado en
-         <br>
-        <a class="text-link"
-          href="https://www.ozgekeles.com/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        > OZGE KELES
-        </a>
-      </span>
-    </div>
+	<div class="footer-logo">
+		<div class="logo-box">
+			<img
+				class="box-logo-svg"
+				src="/icon-l1.svg"
+				alt="icono representativo de Henry Azogue"
+			/>
+			<span class="box-logo-nike">@ulhis</span>
+		</div>
+		<nav class="navigate-box">
+			<li class="box-content">
+				<a class="box-link" href="#">| Inicio</a>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#projects"
+					>| Experiencia</a
+				>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#about">| Acerca de mí</a>
+			</li>
+			<li class="box-content">
+				<a class="box-link" href="#contact">| Contactame</a>
+			</li>
+		</nav>
+	</div>
+
+	<div class="footer-text">
+		<span class="box-logo-text">Portfolio v2</span>
+		<span class="box-logo-text-state">
+			Disponible
+			<img
+				class="text-state-svg"
+				src="/icon-l4.svg"
+				alt="icono de referencia para disponibilidad para trabajos"
+			/>
+		</span>
+		<span class="box-logo-text"
+			>Inspiración:
+			<a
+				class="text-link"
+				href="https://www.ozgekeles.com/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Ozge keles
+			</a>
+		</span>
+	</div>
 </footer>
 
 <style>
-.footer{
-  box-sizing: border-box;
-  border-radius: var(--b-radius) var(--b-radius) 0 0;
-  background-color: var(--c-big-stone);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--c-alabaster);
-  padding: 2rem 1rem;
-  max-width: 62rem;
-  margin: 0 auto;
-}
-.name{
-  font-size: 16px;
-  a{
-    color: var(--c-concrete);
-    list-style-type: circle;
-    text-decoration: none;
-  }
-}
-.header-logo{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
+	.footer {
+		box-sizing: border-box;
+		background: url("image/footer-portada.avif");
+		background-size: cover;
+		background-position: 0% 35%;
 
-}
-.logo-n1{
-  font-size: 18px;
-  font-family: var(--font-special);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.logo-n2{
-  font-size: 19px;
-}
-.text{
-  color: var(--c-concrete);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  a{    
-    text-decoration: none;
-    color: var(--c-concrete);
-    font-weight: 400;
-  }
-}
-.text-link:hover{
-  color: var(--c-burning-sand-light);
-  transition: color 0.25s ease-in-out;
-}
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		color: var(--colore-atomicTangerine);
+		font-size: var(--size-font-text-special);
+
+		padding: 0 var(--padding-global-box);
+		padding-bottom: 2rem;
+		width: auto;
+		height: clamp(
+			31.25rem,
+			25.4643rem + 28.9286vw,
+			71.75rem
+		);
+	}
+	.footer-logo {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.logo-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 7px;
+	}
+	.box-logo-svg {
+		width: var(--sizing-box-logo);
+		height: var(--sizing-box-logo);
+		color: var(--colore-atomicTangerine);
+	}
+	.box-logo-nike {
+		font-family: var(--font-special);
+	}
+	.box-logo-text {
+	}
+	.box-logo-text-state {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1px;
+	}
+	.text-state-svg {
+		color: var(--colore-inchWorn);
+		width: var(--sizing-box-icon-decoration);
+		height: var(--sizing-box-icon-decoration);
+	}
+
+	.navigate-box {
+		display: flex;
+		gap: 1rem;
+	}
+	.box-content {
+		list-style: none;
+	}
+	.box-link {
+		color: var(--colore-atomicTangerine);
+		font-size: var(--size-font-text-special);
+		text-decoration: none;
+	}
+	.box-link:hover {
+		color: var(--colore-tamarind);
+		transition: color 0.25s ease-in-out;
+	}
+	.text-link {
+		text-decoration: none;
+		color: var(--colore-atomicTangerine);
+	}
+
+	.footer-text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 10px;
+	}
+	@media (width <=425px) {
+		.footer {
+			background-position: 25% 0%;
+			flex-direction: row;
+		}
+		.navigate-box {
+			flex-direction: column;
+		}
+	}
+	@media (width <=320px) {
+		.footer {
+			background-position: 35% 0%;
+		}
+	}
 </style>
