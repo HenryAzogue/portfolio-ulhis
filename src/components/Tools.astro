@@ -223,7 +223,7 @@ import Git from "@icons/Git.astro";
 
 		.div2-title {
 			margin: 0;
-			font-size: var(--size-font-grid-big);
+			font-size: var(--size-font-grid-normal);
 			font-weight: 400;
 			font-style: italic;
 			color: var(--colore-concrete);
@@ -278,8 +278,12 @@ import Git from "@icons/Git.astro";
 
 		.div4-tag {
 			margin: 0;
-			font-size: var(--size-font-grid-big);
+			font-size: var(--size-font-grid-normal);
 			color: var(--colore-concrete);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
 		}
 	}
 
@@ -315,7 +319,7 @@ import Git from "@icons/Git.astro";
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				gap: 1rem;
+				gap: 10px;
 
 				.div5-tag-svg {
 					width: 45px;
@@ -325,7 +329,7 @@ import Git from "@icons/Git.astro";
 		}
 		.div5-content {
 			color: var(--colore-concrete);
-			font-size: var(--size-font-grid-big);
+			font-size: var(--size-font-grid-normal);
 			letter-spacing: -2px;
 			margin: 0;
 		}
@@ -400,11 +404,7 @@ import Git from "@icons/Git.astro";
 
 		.div7-content {
 			color: #7d2ae7;
-			font-size: clamp(
-				2.625rem,
-				2.375rem + 1.25vw,
-				4.375rem
-			);
+			font-size: var(--size-font-grid-big);
 			font-weight: bold;
 			letter-spacing: -2px;
 			display: flex;
@@ -434,7 +434,7 @@ import Git from "@icons/Git.astro";
 		}
 	}
 
-	@media (width >= 768px) {
+	@media (width >= 769px) {
 		.parent {
 			--gri-row-value: clamp(
 				7.8125rem,
